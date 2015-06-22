@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/usr/home/students10/40/tainsuej/.vim/plugged/vam/autoload/vam'
+let g:netrw_dirhist_2='/usr/home/students10/40/tainsuej/.vim/plugged/vam/autoload'
+let g:netrw_dirhist_3='/usr/home/students10/40/tainsuej/.vim/t'
+let g:netrw_dirhist_4='/usr/home/students10/40/tainsuej/.vim/test'
