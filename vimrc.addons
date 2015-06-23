@@ -1,0 +1,34 @@
+fun! SetupVAM()
+  let c = get(g:, 'vim_addon_manager', {})
+  let g:vim_addon_manager = c
+  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/plugged'
+
+  " Force your ~/.vim/after directory to be last in &rtp always:
+  " let g:vim_addon_manager.rtp_list_hook = 'vam#ForceUsersAfterDirectoriesToBeLast'
+
+  " most used options you may want to use:
+  let c.log_to_buf = 1
+  " let c.auto_install = 0
+  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vam'
+
+  let g:vim_addon_manager.scm_merge_strategy='force'
+
+  let g:vim_addon_manager = {'scms': {'svn':{}, 'git': {}}, 'archive':{}}
+  fun! MyGitCheckout(repository, targetDir)
+    let a:repository.url = substitute(a:repository.url, '^git://github', 'http://github', '')
+    let a:repository.url = substitute(a:repository.url, '$', '/archive/master.zip', '')
+    return vam#utils#RunShell('mkdir tempDir && cd tempDir && wget $.url && unzip master.zip && rm master.zip && mv * $p && cd .. && rm -rf tempDir', a:repository, a:targetDir)
+   
+
+  endfun
+  let g:vim_addon_manager.scms.git.clone=['MyGitCheckout']
+  let g:vim_addon_manager.scms.svn.clone=['vam#vcs#SubversionCheckout']
+  " “'clone': ['GitCheckout']” works as well
+  " This provides the VAMActivate command, you could be passing plugin names, too
+  call vam#ActivateAddons(['SQLComplete', 'vim-help', 'mysqlquery',  'lightline.vim', 'tlib', 'EasyMotion', 
+	\ 'snipmate', 'PaperColor', 'vital', 'svnj', 'molokai', 'vim-snippets', 'vim-signify', 
+   \ 'surround', 'vim-pi', 'dbext', 'CSApprox', 'The_NERD_tree', 
+   \ 'The_NERD_Commenter', 'Vim-Support', 'bash-support', 'vim-addon-mw-utils'], {})
+endfun
+
+call SetupVAM()
