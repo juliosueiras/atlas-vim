@@ -5,24 +5,6 @@ filetype plugin indent on      " Enable automatic settings based on file type
 syntax on                      " Enable colour syntax highlighting
 
 so ~/.vimrc.addons
-set comments=sl:/*,mb:*,elx:*/ " auto format comment blocks
-" Remove trailing whitespaces and ^M chars
-" To disable the stripping of whitespace, add the following to your
-" .vimrc.before.local file:
-" let g:spf13_keep_trailing_whitespace = 1
-autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
-" preceding line best in a plugin but here for now.
-autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-" Workaround vim-commentary for Haskell
-autocmd FileType haskell setlocal commentstring=--\ %s
-" Workaround broken colour highlighting in Haskell
-autocmd FileType haskell,rust setlocal nospell
-" }"
-
-let g:dbext_default_profile_test = 'type=ORA:user=$ORACLE_USER:passwd=$ORACLE_PASSWORD:filetype=sql'
-set relativenumber
-nnoremap <F10> :b <C-Z>
-
 
 """"""""""
 " Options
@@ -117,86 +99,10 @@ let g:rehash256 = 1
 color molokai
 let mapleader=','
 inoremap jj <ESC>
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"x":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-      \ }
 set noshowmode
-let g:svnj_allow_leader_mappings=1
-let g:svnj_browse_cache_all = 1
-let g:signify_vcs_list = [ 'svn' ]
-
-
-nnoremap Y y$"
-" Move selected lines up and down Yank to the end of the line
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-nnoremap <F9> :NERDTreeToggle<CR>
-
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-    exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-    exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-
-set cursorline
-set cursorcolumn
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuxVars
-set wildchar=<Tab> wildmenu wildmode=full
-set wildcharm=<C-Z>
-set wildignore=*.o,*.obj,*~                                                     "stuff to ignore when tab completing
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*cache*
-set wildignore+=*logs*
-set wildignore+=*node_modules/**
-set wildignore+=*DS_Store*
-set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
-"
-" Toggle buffer list
-nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>t :CtrlPBufTag<CR>
-"nnoremap <Leader>T :TagbarToggle<CR>
-nnoremap <Leader>m :CtrlPMRU<CR>"
-cnoreabbrev Wq wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qa qa
-cnoreabbrev Bd bd
-cnoreabbrev bD bd
-cnoreabbrev wrap set wrap
-cnoreabbrev nowrap set nowrap
-cnoreabbrev bda BufOnly
-cnoreabbrev t tabe
-cnoreabbrev T tabe
-
 
 nnoremap Y y$"
 " Move selected lines up and down Yank to the end of the line
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-nnoremap <F10> :b <C-Z>
