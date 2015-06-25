@@ -9,7 +9,12 @@ Make of backup of .vim folder and .vimrc(if you have one in your home folder)
 > next execute `unzip master.zip && mv atlas-vim-master atlas-vim`
 > last execute the install.sh inside of the folder
 
+## Plugins List Installed
+- [vam](https://github.com/MarcWeber/vim-addon-manager)
+
 ## Bug
 > create a issue github or send me a email if you ask me or there is issue
 > my email is juliosueiras@gmail.com
 
+## License
+MIT License
