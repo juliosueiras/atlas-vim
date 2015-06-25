@@ -4,6 +4,7 @@ set nocompatible               " NEVER change this! Use Vim mode, not vi mode.
 filetype plugin indent on      " Enable automatic settings based on file type
 syntax on                      " Enable colour syntax highlighting
 
+"Sdasd
 so ~/.vimrc.addons
 set comments=sl:/*,mb:*,elx:*/ " auto format comment blocks
 " Remove trailing whitespaces and ^M chars
@@ -75,9 +76,6 @@ set softtabstop=2              " ...each indent level
 " Maps
 """""""
 "
-" F1 to be a context sensitive keyword-under-cursor lookup
-nnoremap <F1> :help <C-R><C-W><CR>
-
 " Reformat current paragraph
 nnoremap Q gqip
 
@@ -121,6 +119,7 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'component': {
       \   'readonly': '%{&readonly?"x":""}',
+      \ 'syntastic': '%#warningmsg#%{SyntasticStatuslineFlag()}%*',
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
@@ -165,8 +164,6 @@ set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
 set wildignore=*.o,*.obj,*~                                                     "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*cache*
 set wildignore+=*logs*
 set wildignore+=*node_modules/**
 set wildignore+=*DS_Store*
@@ -177,7 +174,6 @@ set wildignore+=*.png,*.jpg,*.gif
 "
 " Toggle buffer list
 nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>t :CtrlPBufTag<CR>
 "nnoremap <Leader>T :TagbarToggle<CR>
 nnoremap <Leader>m :CtrlPMRU<CR>"
 cnoreabbrev Wq wq
@@ -200,3 +196,42 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 nnoremap <F10> :b <C-Z>
+let g:BASH_Executable = '/bin/bash'
+autocmd FileType sql,plsql let g:sql_type_default = 'plsql'
+
+let g:sneak#streak = 1
+if has('persistent_undo')
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+endif
+set ts=2 sw=2 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+set mousemodel=popup
+
+" snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="vertical"
+
+" syntastic
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
+
+let g:viewdoc_open="below new"

@@ -18,17 +18,25 @@ fun! SetupVAM()
     let a:repository.url = substitute(a:repository.url, '^git://github', 'http://github', '')
     let a:repository.url = substitute(a:repository.url, '$', '/archive/master.zip', '')
     return vam#utils#RunShell('mkdir tempDir && cd tempDir && wget $.url && unzip master.zip && rm master.zip && mv * $p && cd .. && rm -rf tempDir', a:repository, a:targetDir)
-   
+
 
   endfun
   let g:vim_addon_manager.scms.git.clone=['MyGitCheckout']
   let g:vim_addon_manager.scms.svn.clone=['vam#vcs#SubversionCheckout']
   " “'clone': ['GitCheckout']” works as well
   " This provides the VAMActivate command, you could be passing plugin names, too
-  call vam#ActivateAddons(['sql.snippets', 'SQLUtilities', 'sqloracle', 'ctrlp', 'SQLComplete', 'vim-help', 'mysqlquery',  'lightline.vim', 'tlib', 'EasyMotion', 
-	\ 'snipmate', 'PaperColor', 'vital', 'svnj', 'molokai', 'vim-snippets', 'vim-signify', 
-   \ 'surround', 'vim-pi', 'dbext', 'CSApprox', 'The_NERD_tree', 
-   \ 'The_NERD_Commenter', 'Vim-Support', 'bash-support', 'vim-addon-mw-utils'], {})
+  call vam#ActivateAddons(['abolish', 'unimpaired', 'vim-sneak', 'Gundo', 'vim-expand-region', 'repeat',
+	\ 'CodeOverview', 'CRefVim', 'quickfixsigns', 'hier', 'vimproc', 'VimCompletesMe', 'vim-autocomplpop', 'L9',
+	\  'vim-autoformat', 'unite', 'vim-quickrun', 'quickfixstatus', 'matchit.zip', 'vim-trailing-whitespace',
+	\ 'Alignment@drchip', 'betterSearch', 'ctrlp', 'vim-help', 'yankstack',  'UltiSnips', 'vim-commentary',
+	\ 'lightline.vim', 'tlib', 'EasyMotion', 'vim-startify', 'vim-polyglot', 'Syntastic', 'grep', 'vim-misc',
+	\ 'snipmate', 'PaperColor', 'vital', 'svnj', 'molokai', 'vim-snippets', 'vim-signify',
+  \ 'vimshell', 'vim-shellutils', 'vim-plugin-viewdoc', 'QQ.vim',
+	\ 'surround', 'vim-pi',  'CSApprox', 'The_NERD_tree', 'vim-plugins',
+	\ 'Vim-Support',  'vim-addon-mw-utils'], {})
+
+
+  autocmd FileType sql,plsql call vam#ActivateAddons(['sql.snippets', 'mysqlquery', 'SQLComplete', 'SQLUtilities', 'sqloracle', 'dbext'], {})
 endfun
 
 call SetupVAM()
