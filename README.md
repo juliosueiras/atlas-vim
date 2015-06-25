@@ -11,6 +11,10 @@ Make of backup of .vim folder and .vimrc(if you have one in your home folder)
 
 ## Plugins List Installed
 - [vam](https://github.com/MarcWeber/vim-addon-manager)
+- [vim-pi](https://bitbucket.org/vimcommunity/vim-pi)
+
+## Plugin For Learning Vim
+- [LearnVim](https://github.com/dahu/LearnVim) `:h learnvim`
 
 ## Bug
 > create a issue github or send me a email if you ask me or there is issue
