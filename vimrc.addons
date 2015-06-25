@@ -26,14 +26,14 @@ fun! SetupVAM()
   " “'clone': ['GitCheckout']” works as well
   " This provides the VAMActivate command, you could be passing plugin names, too
   call vam#ActivateAddons(['abolish', 'unimpaired', 'vim-sneak', 'Gundo', 'vim-expand-region', 'repeat',
-	\ 'CodeOverview', 'CRefVim', 'quickfixsigns', 'hier', 'vimproc', 'VimCompletesMe', 'vim-autocomplpop', 'L9',
+	\ 'CRefVim', 'quickfixsigns', 'hier', 'vimproc', 'VimCompletesMe', 'vim-autocomplpop', 'L9',
 	\  'vim-autoformat', 'unite', 'vim-quickrun', 'quickfixstatus', 'matchit.zip', 'vim-trailing-whitespace',
 	\ 'Alignment@drchip', 'betterSearch', 'ctrlp', 'vim-help', 'yankstack',  'UltiSnips', 'vim-commentary',
 	\ 'lightline.vim', 'tlib', 'EasyMotion', 'vim-startify', 'vim-polyglot', 'Syntastic', 'grep', 'vim-misc',
 	\ 'snipmate', 'PaperColor', 'vital', 'svnj', 'molokai', 'vim-snippets', 'vim-signify',
   \ 'vimshell', 'vim-shellutils', 'vim-plugin-viewdoc', 'QQ.vim',
-	\ 'surround', 'vim-pi',  'CSApprox', 'The_NERD_tree', 'vim-plugins',
-	\ 'Vim-Support',  'vim-addon-mw-utils'], {})
+	\ 'surround', 'vim-pi', 'CSApprox', 'The_NERD_tree', 'vim-plugins',
+	\ 'vim-addon-mw-utils', 'numbers'], {})
 
 
   autocmd FileType sql,plsql call vam#ActivateAddons(['sql.snippets', 'mysqlquery', 'SQLComplete', 'SQLUtilities', 'sqloracle', 'dbext'], {})

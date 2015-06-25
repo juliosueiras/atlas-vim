@@ -21,6 +21,7 @@ last go inside of the folder and execute **BEWARE** this will overwrite .vim and
 ```
 
 ## Plugins List Installed
+- [numbers.vim](https://github.com/myusuf3/numbers.vim)
 - [Alignment@drchip](http://www.drchip.org/astronaut/vim/index.html)
 - [betterSearch](http://www.vim.org/scripts/script.php?script_id=4241)
 - [CRefVim](http://www.vim.org/scripts/script.php?script_id=614)
