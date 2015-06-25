@@ -25,7 +25,7 @@ fun! SetupVAM()
   let g:vim_addon_manager.scms.svn.clone=['vam#vcs#SubversionCheckout']
   " “'clone': ['GitCheckout']” works as well
   " This provides the VAMActivate command, you could be passing plugin names, too
-  call vam#ActivateAddons(['molokai'], {})
+  call vam#ActivateAddons(['vim-pi', 'molokai'], {})
 endfun
 
 call SetupVAM()
