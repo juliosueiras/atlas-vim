@@ -1,0 +1,190 @@
+--------------------------------------------------------------------------------
+--  Functions
+--------------------------------------------------------------------------------
+
+	'assert'
+	'collectgarbage'
+	'dofile'
+	'error'
+	'getmetatable'
+	'ipairs'
+	'load'
+	'loadfile'
+	'next'
+	'pairs'
+	'pcall'
+	'print'
+	'rawequal'
+	'rawget'
+	'rawlen'
+	'rawset'
+	'require'
+	'select'
+	'setmetatable'
+	'tonumber'
+	'tostring'
+	'type'
+	'xpcall'
+	'coroutine.create'
+	'coroutine.isyieldable'
+	'coroutine.resume'
+	'coroutine.running'
+	'coroutine.status'
+	'coroutine.wrap'
+	'coroutine.yield'
+	'debug.debug'
+	'debug.gethook'
+	'debug.getinfo'
+	'debug.getlocal'
+	'debug.getmetatable'
+	'debug.getregistry'
+	'debug.getupvalue'
+	'debug.getuservalue'
+	'debug.sethook'
+	'debug.setlocal'
+	'debug.setmetatable'
+	'debug.setupvalue'
+	'debug.setuservalue'
+	'debug.traceback'
+	'debug.upvalueid'
+	'debug.upvaluejoin'
+	'file:close'
+	'file:flush'
+	'file:lines'
+	'file:read'
+	'file:seek'
+	'file:setvbuf'
+	'file:write'
+	'io.close'
+	'io.flush'
+	'io.input'
+	'io.lines'
+	'io.open'
+	'io.output'
+	'io.popen'
+	'io.read'
+	'io.tmpfile'
+	'io.type'
+	'io.write'
+	'math.abs'
+	'math.acos'
+	'math.asin'
+	'math.atan'
+	'math.ceil'
+	'math.cos'
+	'math.deg'
+	'math.exp'
+	'math.floor'
+	'math.fmod'
+	'math.log'
+	'math.max'
+	'math.min'
+	'math.modf'
+	'math.rad'
+	'math.random'
+	'math.randomseed'
+	'math.sin'
+	'math.sqrt'
+	'math.tan'
+	'math.tointeger'
+	'math.type'
+	'math.ult'
+	'os.clock'
+	'os.date'
+	'os.difftime'
+	'os.execute'
+	'os.exit'
+	'os.getenv'
+	'os.remove'
+	'os.rename'
+	'os.setlocale'
+	'os.time'
+	'os.tmpname'
+	'package.loadlib'
+	'package.searchpath'
+	'string.byte'
+	'string.char'
+	'string.dump'
+	'string.find'
+	'string.format'
+	'string.gmatch'
+	'string.gsub'
+	'string.len'
+	'string.lower'
+	'string.match'
+	'string.pack'
+	'string.packsize'
+	'string.rep'
+	'string.reverse'
+	'string.sub'
+	'string.unpack'
+	'string.upper'
+	'table.concat'
+	'table.insert'
+	'table.move'
+	'table.pack'
+	'table.remove'
+	'table.sort'
+	'table.unpack'
+	'utf8.char'
+	'utf8.codepoint'
+	'utf8.codes'
+	'utf8.len'
+	'utf8.offset'
+
+--------------------------------------------------------------------------------
+--  Fields
+--------------------------------------------------------------------------------
+
+	'_G'
+	'_VERSION'
+	'io.stderr'
+	'io.stdin'
+	'io.stdout'
+	'math.huge'
+	'math.maxinteger'
+	'math.mininteger'
+	'math.pi'
+	'package.config'
+	'package.cpath'
+	'package.loaded'
+	'package.path'
+	'package.preload'
+	'package.searchers'
+	'utf8.charpattern'
+
+--------------------------------------------------------------------------------
+--  Metamethods
+--------------------------------------------------------------------------------
+
+	methods:
+	"add" : op1, op2
+	"sub" : op1, op2
+	"mul" : op1, op2
+	"div" : op1, op2
+	"mod" : op1, op2
+	"pow" : op1, op2
+	"unm" : op
+	"idiv" : op1, op2
+	"band" : op1, op2
+	"bor" : op1, op2
+	"bxor" : op1, op2
+	"bnot" : op
+	"shl" : op, displace
+	"shr" : op, displace
+	"concat" : op1, op2
+	"len" : op
+	"eq" : op1, op2
+	"lt" : op1, op2
+	"le" : op1, op2
+	"index" : object, key
+	"newindex" : object, key, value
+	"call" : func, ...
+	"tostring" : value
+	"gc" : udata
+	"pairs" : value
+
+	fields:
+	"metatable" : protected metatable
+	"mode" : "k", "v" or "kv"
+

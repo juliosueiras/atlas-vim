@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+IFS='/' read -a plugin_url <<< "$1"
+plugin_url=${plugin_url[4]}
+
+wget "$1" && unzip master.zip && rm master.zip 
+mv $plugin_url-master $plugin_url
+
+
+

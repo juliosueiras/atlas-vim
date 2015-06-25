@@ -1,0 +1,24 @@
+---------------------------------------------------------------------------------------
+  RELEASE NOTES FOR VERSION 1.2
+---------------------------------------------------------------------------------------
+- Bugfix: Setup of local templates in case of global installation.
+- 'Run -> make script executable' (\re) is now a toggle.
+- The Awk executable can now be configured.
+- Adjusting end-of-line comments improved.
+- Minor corrections and improvements.
+
+---------------------------------------------------------------------------------------
+  RELEASE NOTES FOR VERSION 1.1
+---------------------------------------------------------------------------------------
+- Map renamed: \rt -> \rx .
+- Wrapper-script missing.
+- Resolve home for linked home directories.
+- Footer did not appear in doc/awk-hotkeys.pdf
+- Bugfix: mapleader issues fixed.
+
+---------------------------------------------------------------------------------------
+  RELEASE NOTES FOR VERSION 1.0
+---------------------------------------------------------------------------------------
+- Initial public release.
+
+

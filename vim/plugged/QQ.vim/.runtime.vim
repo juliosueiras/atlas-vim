@@ -1,0 +1,15 @@
+" Used for local development, with vim-scriptease
+let s:path = expand('<sfile>:p:h')
+exe 'Runtime'  s:path . '/syntax/QQ.vim'
+exe 'Runtime'  s:path . '/plugin/QQ.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/regexp.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/query.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/buffers.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/utils.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/request.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/auth.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/response.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/history.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/mimetypes.vim'
+exe 'Runtime'  s:path . '/autoload/QQ/collection.vim'
+exe 'Runtime'  s:path . '/autoload/QQ.vim'

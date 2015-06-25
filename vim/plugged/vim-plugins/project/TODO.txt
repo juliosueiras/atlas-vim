@@ -1,0 +1,128 @@
+Interesting:
+- Documentation of Windows idiosyncrasies:
+    :help win32
+
+Project:
+- (FM,WM, DONE?) Use normal!, noremap and noremenu consistently.
+- (FM,WM) Is the difference between local and global/system installation
+  documented somewhere?
+- (WM, DONE?) Improve 'adjust end-of-line comment' to change the line if the comment
+  itself contains ignored sections?
+
+vim.org:
+- (FM, DONE?) Reference github on plug-in pages.
+
+Templates:
+- (WM, DONE) API 'EditTemplateFiles'.
+  * Check whether an indexed file actually exists.
+  * Configuration of the file browser (+ documentation).
+- (WM, DONE?) After reloading a template library, it is possible that the maps
+  are not created anymore.
+- (WM, DONE) Help templates.
+  * The browser for help templates should be called by a dedicated function in
+    the help template.
+  * The browser should be configurable from outside, so it does not have to be
+    set up within the template library.
+- (WM) Correct escape for menu names.
+  * At least these special characters must be escaped: <space> . | \ &
+  * Expanded menus for lists.
+- (WM) When overwriting templates, also set new map and shortcut, if one is
+  given.
+- (WM) Better debugging while reading template files:
+  Print filename and line number for errors and warnings.
+- (WM) Add configuration "g:Templates_OverwriteWarning".
+- (WM) Configure CTRL+J and CTRL+D.
+
+Awk:
+- (FM) 'code->comment' should not insert a space following the hash?
+- (FM) The conformation message for 'make script exec.' is not visible (see fix
+  in perl-support).
+- (FM) Rename function 'g:Awk_RereadTemplates'.
+
+Bash:
+- (FM) 'code->comment' should not insert a space following the hash?
+- (FM) The conformation message for 'make script exec.' is not visible (see fix
+  in perl-support).
+- (FM) Rename function 'g:BASH_RereadTemplates'.
+
+C/C++:
+- (FM, DONE) Documentation: Change documentation with regard to Make integration.
+  * 'Run' menu entries removed.
+  * Maps configured in ftplugin.
+  * Reference documentation of toolbox.
+  * Reference toolbox in 'c-hotkeys.tex'?
+  * Document 'g:C_UseToolbox' and 'g:C_UseTool_*'.
+  * Menu entry 'Run->executable to run' is not part of the Make integration
+    anymore, since the Make integration moves to the toolbox. It is to be
+    documented as configuration for 'Run->run', similar to 'Run->cmdline arg.'.
+    Shortcut changes to '\re'.
+- (WM) Doxygen:
+  * (DONE) Templates for "overload".
+  * (DONE) Append "short, after member" to several lines.
+  * Add escaped characters "\" and "|" once the template engine supports this.
+- (WM) Documentation: The documentation of "g:Templates_MapInUseWarn" is wrong.
+
+Git:
+- (WM, DONE) Add more suggestions for custom menu entries to 's:Git_CustomMenu'.
+- (WM, DONE) Add current custom menu entries to documentation and/or "git-support/rc/",
+  as a starting point for customization.
+- (WM, DONE) Give directory as an argument to ':GitStatus'.
+- (WM, DONE) ':GitStatus' should respect 'status.relativePaths'.
+- (WM) Current method for jumping to Git buffers does not work for tabs.
+  * (DONE) Open the buffer in a new window.
+  * Optionally: Jump across tab pages.
+- (WM) How about jumping to windows?
+  * (DONE) Open the buffer in a new window.
+  * Optionally: Jump across tab pages.
+- (WM, DONE?) Problem with 's:OpenFile()':
+  Since the name of the buffer has to match exactly, this does not always work
+  with different working directories.
+- (WM, DONE?) Maps for completing Git commands, branches, tags, remotes, ...
+  similar to the cmd-line completion plug-in.
+- (WM) New status buffer output (version > 1.8.5):
+  Update syntax highlighting, folding function, file actions
+- (WM) Do not use "sync fromstart" in syntax highlighting,
+  is extremely slow for diff and log.
+- (WM) Document map "ow" in status buffer, mention in the README.
+- (WM) Document map "ac", "cc", and "rc" in diff buffer, mention in the README.
+- (WM) Update buffer after executing a command: :GitBranch, :GitRemote, :GitStash, ...
+- (WM) Buffer "git stash list", maps for: create
+- (WM) Feed output of "git apply" into quickfix.
+- (WM) Rename function 'GitS_FoldLog' into 'GitS_FoldLogTxt'.
+- (WM) Set 'foldmethod' individually and not in 's:OpenGitBuffer'.
+
+LaTeX:
+- (FM) Documentation: Menu 'Beamer' missing.
+- (WM, DONE) Documentation: Menu 'Help' missing.
+- (FM) Reference Card: Menu 'Beamer' missing.
+- (WM, DONE) Reference Card: Entry 'Help->english' missing.
+- (WM) Documentation: The documentation of "g:Templates_MapInUseWarn" is wrong.
+
+Perl:
+- (FM, DONE) Documentation: Change documentation with regard to Make integration.
+  * 'Run' menu entries removed.
+  * Maps configured in ftplugin.
+  * Reference documentation of toolbox.
+  * Reference toolbox in 'perl-hotkeys.tex'?
+  * Document 'g:Perl_UseToolbox' and 'g:Perl_UseTool_make'.
+- (WM) Documentation: Maps Ctrl+j and Crtl+d.
+- (WM) Documentation: 'g:Perl_AdditionalTemplates'.
+- (WM) Documentation: The documentation of "g:Templates_MapInUseWarn" is wrong.
+- Documentation: Check that maps are introduced properly.
+- Remove old release script.
+
+Vim:
+- (WM, DONE) 'code->comment' should not insert a space following the quote.
+
+Toolbox:
+- CMake: Does the help work at all under Windows?
+- CMake: Names of help buffers, can we use brackets, other characters (Windows)?
+- CMake: Run CMakeSetup.exe (Windows)
+- CMake: Run ccmake (in xterm), cmake-gui (UNIX)
+- Doxygen: Run doxywizard (UNIX, Windows?)
+- Make: Use option 'Make_Executable'.
+
+Snippets:
+- (FM, DONE?) Set first parameter ("save") in "browse()" to '1' for writing snippets
+
+" vim: expandtab:tw=80
