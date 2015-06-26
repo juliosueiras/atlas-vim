@@ -1,12 +1,12 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
-require 'json'
-require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+# Middleman
+gem 'middleman', '~>3.3.10'
+gem 'middleman-gh-pages', '~> 0.0.3'
+gem 'middleman-syntax', '~> 2.0.0'
+gem 'middleman-autoprefixer', '~> 2.4.4'
+gem 'rouge', '~> 1.9.0'
+gem 'redcarpet', '~> 3.3.1'
 
-gem 'jekyll'
-gem 'redcarpet'
-gem 'classifier-reborn'
-gem 'fast-stemmer'
-
-gem 'github-pages', versions['github-pages']
+gem 'rake', '~> 10.4.2'
+gem 'therubyracer', '~> 0.12.1', platforms: :ruby
