@@ -1,3 +1,3 @@
 # Atlas-Vim
 
-[Describe the project.]
+Atlas-Vim
