@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Atlas Vim Docs - Vimrc Docs</title>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="javascripts/all.js" type="text/javascript"></script>
+
+      <script>
+        $(function() {
+          setupLanguages(["vim"]);
+        });
+      </script>
+  </head>
+
+  <body class="vimrc">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="vim">vim</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='./index.html'>Index</a></li>
+            <li><a href='./plugins.html'>Plugins</a></li>
+            <li><a href='./vimrc.html'>Vimrc</a></li>
+            <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="atlas-vim">atlas-vim</h1>
+
+<p><a href="https://gitter.im/juliosueiras/atlas-vim?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/juliosueiras/atlas-vim" src="https://badges.gitter.im/Join%20Chat.svg" /></a></p>
+
+<p>Vim with Setup for Atlas Server of Sheridan College(this is only for sheridan college student)
+Make of backup of .vim folder and .vimrc(if you have one in your home folder)</p>
+
+<h1 id="vimrc-docs">Vimrc Docs</h1>
+
+<p>&ldquo; NEVER change this! Use Vim mode, not vi mode.
+&rdquo; Enable automatic settings based on file type
+&ldquo; Enable colour syntax highlighting
+&rdquo; auto format comment blocks
+&ldquo; To disable the stripping of whitespace, add the following to your
+&rdquo; .vimrc.before.local file:
+&ldquo; let g:spf13_keep_trailing_whitespace = 1
+&rdquo; preceding line best in a plugin but here for now.</p>
+
+<h2 id="start">Start</h2>
+<pre class="highlight viml"><code><span class="k">set</span> nocompatible               
+<span class="k">filetype</span> plugin indent <span class="k">on</span>      
+syntax <span class="k">on</span>                      
+
+<span class="k">so</span> <span class="p">~</span>/<span class="p">.</span>vimrc<span class="p">.</span>addons
+<span class="k">set</span> comments<span class="p">=</span><span class="k">sl</span><span class="p">:</span><span class="sr">/*,mb:*,elx:*/</span> " Remove trailing whitespaces and ^M chars
+
+autocmd <span class="nb">FileType</span> haskell<span class="p">,</span>puppet<span class="p">,</span><span class="k">ruby</span><span class="p">,</span>yml <span class="k">setlocal</span> expandtab shiftwidth<span class="p">=</span><span class="m">2</span> softtabstop<span class="p">=</span><span class="m">2</span>
+
+autocmd <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *<span class="p">.</span>coffee <span class="k">set</span> <span class="k">filetype</span><span class="p">=</span>coffee
+
+autocmd <span class="nb">FileType</span> haskell <span class="k">setlocal</span> commentstring<span class="p">=--</span>\ %s
+
+autocmd <span class="nb">FileType</span> haskell<span class="p">,</span>rust <span class="k">setlocal</span> nospell
+</code></pre>
+
+<h2 id="second">Second</h2>
+<pre class="highlight viml"><code><span class="k">let</span> <span class="nv">g:dbext_default_profile_test</span> <span class="p">=</span> <span class="s1">'type=ORA:user=$ORACLE_USER:passwd=$ORACLE_PASSWORD:filetype=sql'</span>
+<span class="k">set</span> relativenumber
+nnoremap <span class="p">&lt;</span>F10<span class="p">&gt;</span> <span class="p">:</span><span class="k">b</span> <span class="p">&lt;</span>C<span class="p">-</span>Z<span class="p">&gt;</span>
+
+<span class="k">set</span> hidden                     
+<span class="k">set</span> <span class="k">confirm</span>                    
+
+<span class="k">set</span> viminfo<span class="p">=</span>'<span class="m">1000</span><span class="p">,</span>f1<span class="p">,&lt;</span><span class="m">500</span><span class="p">,:</span><span class="m">100</span><span class="p">,</span>/<span class="m">100</span><span class="p">,</span><span class="k">h</span>
+
+
+<span class="k">set</span> hlsearch                   
+<span class="k">set</span> ignorecase                 
+<span class="k">set</span> smartcase                  
+<span class="k">set</span> incsearch                  
+
+
+<span class="k">set</span> backspace<span class="p">=</span>indent<span class="p">,</span>eol<span class="p">,</span><span class="k">start</span> 
+<span class="k">set</span> autoindent                 
+<span class="k">set</span> nostartofline              
+<span class="k">set</span> nopaste                    
+<span class="k">set</span> pastetoggle<span class="p">=&lt;</span>f11<span class="p">&gt;</span>          
+
+
+<span class="k">set</span> wildmenu                   
+<span class="k">set</span> wildmode<span class="p">=</span>longest<span class="p">:</span>full<span class="p">,</span>full 
+<span class="k">set</span> showcmd                    
+<span class="k">set</span> laststatus<span class="p">=</span><span class="m">2</span>               
+<span class="k">set</span> cmdheight<span class="p">=</span><span class="m">2</span>                
+<span class="k">set</span> statusline<span class="p">=</span>%<span class="k">f</span>%<span class="k">m</span>%<span class="k">r</span>%<span class="k">h</span>%<span class="k">w</span>\ <span class="p">[</span>%<span class="k">n</span><span class="p">:</span>%<span class="p">{</span>&amp;ff<span class="p">}</span>/%Y<span class="p">]</span>%<span class="p">=[</span><span class="m">0</span><span class="k">x</span>\%<span class="m">04</span><span class="p">.</span><span class="m">4</span>B<span class="p">][</span>%<span class="m">03</span><span class="k">v</span><span class="p">][</span>%<span class="k">p</span>%%\ line\ %<span class="k">l</span>\ of\ %L<span class="p">]</span>
+
+<span class="k">set</span> <span class="k">number</span>                     
+<span class="k">set</span> visualbell                 
+<span class="k">set</span> t_vb<span class="p">=</span>                      
+<span class="k">set</span> mouse<span class="p">=</span><span class="k">a</span>                    
+
+<span class="k">set</span> notimeout ttimeout ttimeoutlen<span class="p">=</span><span class="m">200</span>
+
+
+<span class="k">set</span> tabstop<span class="p">=</span><span class="m">8</span>                  
+
+<span class="k">set</span> shiftwidth<span class="p">=</span><span class="m">2</span>               
+<span class="k">set</span> softtabstop<span class="p">=</span><span class="m">2</span>              
+
+nnoremap Q gqip
+
+
+nnoremap <span class="p">&lt;</span>Up<span class="p">&gt;</span> gk
+nnoremap <span class="p">&lt;</span>Down<span class="p">&gt;</span> gj
+
+map Y <span class="k">y</span>$
+
+nnoremap <span class="p">&lt;</span>C<span class="p">-</span>L<span class="p">&gt;</span> <span class="p">:</span><span class="k">nohl</span><span class="p">&lt;</span>CR<span class="p">&gt;&lt;</span>C<span class="p">-</span>L<span class="p">&gt;</span>
+
+nnoremap <span class="p">&lt;</span>C<span class="p">-</span>Bslash<span class="p">&gt;</span>       <span class="p">:</span><span class="k">set</span> hls<span class="p">!&lt;</span>bar<span class="p">&gt;:</span><span class="k">set</span> hls?<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+inoremap <span class="p">&lt;</span>C<span class="p">-</span>Bslash<span class="p">&gt;</span>       <span class="p">&lt;</span>Esc<span class="p">&gt;:</span><span class="k">set</span> hls<span class="p">!&lt;</span>bar<span class="p">&gt;:</span><span class="k">set</span> hls?<span class="p">&lt;</span>CR<span class="p">&gt;</span><span class="k">a</span>
+
+<span class="k">if</span> has<span class="p">(</span><span class="s2">"autocmd"</span><span class="p">)</span>
+    augroup <span class="k">filetype</span>
+        <span class="c">" Remove ALL autocommands for the current group.</span>
+        autocmd<span class="p">!</span>
+
+        autocmd <span class="nb">BufReadPost</span> * <span class="k">if</span> line<span class="p">(</span><span class="s2">"'\""</span><span class="p">)</span> <span class="p">&gt;</span> <span class="m">1</span> &amp;&amp; line<span class="p">(</span><span class="s2">"'\""</span><span class="p">)</span> <span class="p">&lt;=</span> line<span class="p">(</span><span class="s2">"$"</span><span class="p">)</span> <span class="p">|</span> exe <span class="s2">"normal! g`\""</span> <span class="p">|</span> <span class="k">endif</span>
+    augroup END
+<span class="k">endif</span>
+
+<span class="k">set</span> t_Co<span class="p">=</span><span class="m">256</span>
+<span class="k">let</span> <span class="nv">g:molokai_original</span> <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:rehash256</span> <span class="p">=</span> <span class="m">1</span>
+<span class="k">color</span> molokai
+<span class="k">let</span> mapleader<span class="p">=</span><span class="s1">','</span>
+inoremap jj <span class="p">&lt;</span>ESC<span class="p">&gt;</span>
+
+<span class="k">let</span> <span class="nv">g:lightline</span> <span class="p">=</span> <span class="p">{</span>
+<span class="se">      \</span> <span class="s1">'colorscheme'</span><span class="p">:</span> <span class="s1">'wombat'</span><span class="p">,</span>
+<span class="se">      \</span> <span class="s1">'component'</span><span class="p">:</span> <span class="p">{</span>
+<span class="se">      \</span>   <span class="s1">'readonly'</span><span class="p">:</span> <span class="s1">'%{&amp;readonly?"x":""}'</span><span class="p">,</span>
+<span class="se">      \</span> <span class="s1">'syntastic'</span><span class="p">:</span> <span class="s1">'%#warningmsg#%{SyntasticStatuslineFlag()}%*'</span><span class="p">,</span>
+<span class="se">      \</span> <span class="p">},</span>
+<span class="se">      \</span> <span class="s1">'separator'</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'left'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'right'</span><span class="p">:</span> <span class="s1">''</span> <span class="p">},</span>
+<span class="se">      \</span> <span class="s1">'subseparator'</span><span class="p">:</span> <span class="p">{</span> <span class="s1">'left'</span><span class="p">:</span> <span class="s1">'|'</span><span class="p">,</span> <span class="s1">'right'</span><span class="p">:</span> <span class="s1">'|'</span> <span class="p">}</span>
+<span class="se">      \</span> <span class="p">}</span>
+
+<span class="k">set</span> noshowmode
+
+<span class="k">let</span> <span class="nv">g:svnj_allow_leader_mappings</span><span class="p">=</span><span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:svnj_browse_cache_all</span> <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:signify_vcs_list</span> <span class="p">=</span> <span class="p">[</span> <span class="s1">'svn'</span> <span class="p">]</span>
+
+
+nnoremap Y <span class="k">y</span>$"
+
+vnoremap J <span class="p">:</span><span class="k">m</span> '<span class="p">&gt;+</span><span class="m">1</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>gv<span class="p">=</span>gv
+vnoremap K <span class="p">:</span><span class="k">m</span> '<span class="p">&lt;</span><span class="m">-2</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>gv<span class="p">=</span>gv
+nnoremap <span class="p">&lt;</span>F9<span class="p">&gt;</span> <span class="p">:</span>NERDTreeToggle<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+
+<span class="k">function</span><span class="p">!</span> NERDTreeHighlightFile<span class="p">(</span>extension<span class="p">,</span> fg<span class="p">,</span> bg<span class="p">,</span> guifg<span class="p">,</span> guibg<span class="p">)</span>
+    exec <span class="s1">'autocmd FileType nerdtree highlight '</span> <span class="p">.</span> <span class="nv">a:extension</span> <span class="p">.</span><span class="s1">' ctermbg='</span><span class="p">.</span> <span class="nv">a:bg</span> <span class="p">.</span><span class="s1">' ctermfg='</span><span class="p">.</span> <span class="nv">a:fg</span> <span class="p">.</span><span class="s1">' guibg='</span><span class="p">.</span> <span class="nv">a:guibg</span> <span class="p">.</span><span class="s1">' guifg='</span><span class="p">.</span> <span class="nv">a:guifg</span>
+    exec <span class="s1">'autocmd FileType nerdtree syn match '</span> <span class="p">.</span> <span class="nv">a:extension</span> <span class="p">.</span><span class="s1">' #^\s\+.*'</span><span class="p">.</span> <span class="nv">a:extension</span> <span class="p">.</span><span class="s1">'$#'</span>
+<span class="k">endfunction</span>
+
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'jade'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'ini'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'md'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'#3366FF'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'yml'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'config'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'conf'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'json'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'html'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'styl'</span><span class="p">,</span> <span class="s1">'cyan'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'cyan'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'css'</span><span class="p">,</span> <span class="s1">'cyan'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'cyan'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'coffee'</span><span class="p">,</span> <span class="s1">'Red'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'red'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'js'</span><span class="p">,</span> <span class="s1">'Red'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'#ffa500'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+<span class="k">call</span> NERDTreeHighlightFile<span class="p">(</span><span class="s1">'php'</span><span class="p">,</span> <span class="s1">'Magenta'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'#ff00ff'</span><span class="p">,</span> <span class="s1">'#151515'</span><span class="p">)</span>
+
+<span class="k">set</span> cursorline
+<span class="k">set</span> cursorcolumn
+vmap <span class="p">&lt;</span>C<span class="p">-</span><span class="k">c</span><span class="p">&gt;&lt;</span>C<span class="p">-</span><span class="k">c</span><span class="p">&gt;</span> <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SendSelectionToTmux
+nmap <span class="p">&lt;</span>C<span class="p">-</span><span class="k">c</span><span class="p">&gt;&lt;</span>C<span class="p">-</span><span class="k">c</span><span class="p">&gt;</span> <span class="p">&lt;</span>Plug<span class="p">&gt;</span>NormalModeSendToTmux
+nmap <span class="p">&lt;</span>C<span class="p">-</span><span class="k">c</span><span class="p">&gt;</span><span class="k">r</span> <span class="p">&lt;</span>Plug<span class="p">&gt;</span>SetTmuxVars
+<span class="k">set</span> wildchar<span class="p">=&lt;</span>Tab<span class="p">&gt;</span> wildmenu wildmode<span class="p">=</span>full
+<span class="k">set</span> wildcharm<span class="p">=&lt;</span>C<span class="p">-</span>Z<span class="p">&gt;</span>
+<span class="k">set</span> wildignore<span class="p">=</span>*<span class="p">.</span><span class="k">o</span><span class="p">,</span>*<span class="p">.</span>obj<span class="p">,</span>*<span class="p">~</span>                                                     "stuff <span class="k">to</span> ignore when <span class="k">tab</span> completing
+<span class="k">set</span> wildignore<span class="p">+=</span>*<span class="k">vim</span>/backups*
+<span class="k">set</span> wildignore<span class="p">+=</span>*logs*
+<span class="k">set</span> wildignore<span class="p">+=</span>*node_modules/**
+<span class="k">set</span> wildignore<span class="p">+=</span>*DS_Store*
+<span class="k">set</span> wildignore<span class="p">+=</span>*<span class="p">.</span>gem
+<span class="k">set</span> wildignore<span class="p">+=</span>log/**
+<span class="k">set</span> wildignore<span class="p">+=</span>tmp/**
+<span class="k">set</span> wildignore<span class="p">+=</span>*<span class="p">.</span>png<span class="p">,</span>*<span class="p">.</span>jpg<span class="p">,</span>*<span class="p">.</span>gif
+
+nnoremap <span class="p">&lt;</span>Leader<span class="p">&gt;</span><span class="k">b</span> <span class="p">:</span>CtrlPBuffer<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+nnoremap <span class="p">&lt;</span>Leader<span class="p">&gt;</span><span class="k">m</span> <span class="p">:</span>CtrlPMRU<span class="p">&lt;</span>CR<span class="p">&gt;</span>"
+cnoreabbrev Wq <span class="k">wq</span>
+cnoreabbrev WQ <span class="k">wq</span>
+cnoreabbrev W <span class="k">w</span>
+cnoreabbrev Q <span class="k">q</span>
+cnoreabbrev Qa <span class="k">qa</span>
+cnoreabbrev Bd <span class="k">bd</span>
+cnoreabbrev bD <span class="k">bd</span>
+cnoreabbrev wrap <span class="k">set</span> wrap
+cnoreabbrev nowrap <span class="k">set</span> nowrap
+cnoreabbrev bda BufOnly
+cnoreabbrev <span class="k">t</span> <span class="k">tabe</span>
+cnoreabbrev T <span class="k">tabe</span>
+
+
+nnoremap Y <span class="k">y</span>$"
+vnoremap J <span class="p">:</span><span class="k">m</span> '<span class="p">&gt;+</span><span class="m">1</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>gv<span class="p">=</span>gv
+vnoremap K <span class="p">:</span><span class="k">m</span> '<span class="p">&lt;</span><span class="m">-2</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>gv<span class="p">=</span>gv
+
+nnoremap <span class="p">&lt;</span>F10<span class="p">&gt;</span> <span class="p">:</span><span class="k">b</span> <span class="p">&lt;</span>C<span class="p">-</span>Z<span class="p">&gt;</span>
+<span class="k">let</span> <span class="nv">g:BASH_Executable</span> <span class="p">=</span> <span class="s1">'/bin/bash'</span>
+autocmd <span class="nb">FileType</span> sql<span class="p">,</span>plsql <span class="k">let</span> <span class="nv">g:sql_type_default</span> <span class="p">=</span> <span class="s1">'plsql'</span>
+
+<span class="k">let</span> <span class="nv">g:sneak</span>#streak <span class="p">=</span> <span class="m">1</span>
+<span class="k">if</span> has<span class="p">(</span><span class="s1">'persistent_undo'</span><span class="p">)</span>
+    <span class="k">set</span> undofile
+    <span class="k">set</span> undolevels<span class="p">=</span><span class="m">1000</span>
+    <span class="k">set</span> undoreload<span class="p">=</span><span class="m">10000</span>
+<span class="k">endif</span>
+<span class="k">set</span> <span class="k">ts</span><span class="p">=</span><span class="m">2</span> <span class="k">sw</span><span class="p">=</span><span class="m">2</span> et
+<span class="k">let</span> <span class="nv">g:indent_guides_start_level</span> <span class="p">=</span> <span class="m">2</span>
+<span class="k">let</span> <span class="nv">g:indent_guides_auto_colors</span> <span class="p">=</span> <span class="m">0</span>
+autocmd <span class="nb">VimEnter</span><span class="p">,</span>Colorscheme * <span class="p">:</span><span class="k">hi</span> IndentGuidesOdd  guibg<span class="p">=</span><span class="k">red</span>   ctermbg<span class="p">=</span><span class="m">3</span>
+autocmd <span class="nb">VimEnter</span><span class="p">,</span>Colorscheme * <span class="p">:</span><span class="k">hi</span> IndentGuidesEven guibg<span class="p">=</span>green ctermbg<span class="p">=</span><span class="m">4</span>
+
+<span class="k">set</span> statusline<span class="p">+=</span>%#warningmsg#
+<span class="k">set</span> statusline<span class="p">+=</span>%<span class="p">{</span>SyntasticStatuslineFlag<span class="p">()}</span>
+<span class="k">set</span> statusline<span class="p">+=</span>%*
+
+
+<span class="k">let</span> <span class="nv">g:syntastic_always_populate_loc_list</span> <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:syntastic_auto_loc_list</span> <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:syntastic_check_on_open</span> <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:syntastic_check_on_wq</span> <span class="p">=</span> <span class="m">0</span>
+
+<span class="k">set</span> mousemodel<span class="p">=</span><span class="k">popup</span>
+
+<span class="k">let</span> <span class="nv">g:UltiSnipsExpandTrigger</span><span class="p">=</span><span class="s2">"&lt;tab&gt;"</span>
+<span class="k">let</span> <span class="nv">g:UltiSnipsJumpForwardTrigger</span><span class="p">=</span><span class="s2">"&lt;tab&gt;"</span>
+<span class="k">let</span> <span class="nv">g:UltiSnipsJumpBackwardTrigger</span><span class="p">=</span><span class="s2">"&lt;c-b&gt;"</span>
+<span class="k">let</span> <span class="nv">g:UltiSnipsEditSplit</span><span class="p">=</span><span class="s2">"vertical"</span>
+
+<span class="k">let</span> <span class="nv">g:syntastic_always_populate_loc_list</span><span class="p">=</span><span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:syntastic_auto_loc_list</span><span class="p">=</span><span class="m">1</span>
+<span class="k">let</span> <span class="nv">g:syntastic_aggregate_errors</span> <span class="p">=</span> <span class="m">1</span>
+
+<span class="k">let</span> <span class="nv">g:viewdoc_open</span><span class="p">=</span><span class="s2">"below new"</span>
+</code></pre>
+
+          <h1 id="site-map">Site Map</h1>
+
+<h2 id="a-href-a"><a href="./">Index</a></h2>
+
+<h2 id="a-href-plugins-html-a"><a href="plugins.html">Plugins</a></h2>
+
+<h2 id="a-href-plugins-html-a"><a href="plugins.html">Vimrc</a></h2>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="vim">vim</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
