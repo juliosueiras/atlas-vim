@@ -5,10 +5,13 @@ language_tabs:
   - shell
 
 toc_footers:
+  - <a href='./index.html'>Index</a>
+  - <a href='./plugins.html'>Plugins</a>
+  - <a href='./vimrc.html'>Vimrc</a>
   - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
+  - sitemap
 
 search: true
 ---
@@ -21,21 +24,68 @@ Vim with Setup for Atlas Server of Sheridan College(this is only for sheridan co
 Make of backup of .vim folder and .vimrc(if you have one in your home folder)
 
 # Instruction
->copy the download zip link in the right on github page(in this page)
-then go to terminal/putty , login to your atlas and run
-```shell
-wget https://github.com/juliosueiras/atlas-vim/archive/master.zip`
-```
-next execute
-```shell
-unzip master.zip && mv atlas-vim-master atlas-vim`
-```
-last go inside of the folder and execute **BEWARE** this will overwrite .vim and .vimrc in your home folder(if you have one) make sure to backup it first
-```shell
-./install.sh
-```
 
+## Step 1
+copy the download zip link in the right on github page(in this page)
+then go to terminal/putty , login to your atlas and run
+
+`wget https://github.com/juliosueiras/atlas-vim/archive/master.zip`
+
+## Step 2
+next execute
+
+`unzip master.zip && mv atlas-vim-master atlas-vim`
+
+## Step 3
+last go inside of the folder and execute **BEWARE** this will overwrite .vim and .vimrc in your home folder(if you have one) make sure to backup it first
+
+`./install.sh`
 # Plugins List Installed
+For more description go to [plugins](./plugins.html)
+
+> - [repeat](https://github.com/garbas/vim-snipmate)
+> - [snipmate](https://github.com/garbas/vim-snipmate)
+> - [SQLComplete](http://www.vim.org/scripts/script.php?script_id=1572)
+> - [sqloracle](http://www.vim.org/scripts/script.php?script_id=2371)
+> - [sql.snippets](http://www.vim.org/scripts/script.php?script_id=4861)
+> - [SQLUtilities](http://www.vim.org/scripts/script.php?script_id=492)
+> - [surround](https://github.com/tpope/vim-surround)
+> - [svnj](http://www.vim.org/scripts/script.php?script_id=4888)
+> - [Syntastic](https://github.com/scrooloose/syntastic)
+> - [The_NERD_tree](https://github.com/scrooloose/nerdtree)
+> - [tlib](http://www.vim.org/scripts/script.php?script_id=1863)
+> - [UltiSnips](https://github.com/SirVer/ultisnips)
+> - [unimpaired](https://github.com/tpope/vim-unimpaired)
+> - [unite](https://github.com/Shougo/unite.vim)
+> - [vam](https://github.com/MarcWeber/vim-addon-manager)
+> - [vim-addon-mw-utils](http://www.vim.org/scripts/script.php?script_id=2940)
+> - [vim-autocomplpop](https://github.com/othree/vim-autocomplpop)
+> - [vim-autoformat](http://www.vim.org/scripts/script.php?script_id=4337)
+> - [vim-commentary](https://github.com/tpope/vim-commentary)
+> - [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
+> - [vim-expand-region](https://github.com/terryma/vim-expand-region)
+> - [vim-help](https://github.com/dahu/vim-help)
+> - [vim-misc](https://github.com/xolox/vim-misc)
+> - [vim-online-thesaur](https://github.com/beloglazov/vim-online-thesaurus)
+> - [vim-pi](https://bitbucket.org/vimcommunity/vim-pi)
+> - [vim-plugins](https://github.com/WolfgangMehner/vim-plugins)
+> - [vim-plugin-viewdoc](https://github.com/powerman/vim-plugin-viewdoc)
+> - [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+
+<br>
+<br>
+
+- [vimshell](https://github.com/Shougo/vimshell.vim)
+- [vimproc](https://github.com/Shougo/vimproc.vim)
+- [vim-quickrun](https://github.com/thinca/vim-quickrun)
+- [vim-shellutils](https://github.com/b4b4r07/vim-shellutils)
+- [vim-signify](https://github.com/mhinz/vim-signify)
+- [vim-sneak](https://github.com/justinmk/vim-sneak)
+- [vim-snippets](https://github.com/honza/vim-snippets)
+- [vim-startify](https://github.com/mhinz/vim-startify)
+- [vim-trailing-white](https://github.com/bronson/vim-trailing-whitespace)
+- [vital](https://github.com/vim-jp/vital.vim)
+- [yankstack](https://github.com/maxbrunsfeld/vim-yankstack)
 - [numbers.vim](https://github.com/myusuf3/numbers.vim)
 - [Alignment@drchip](http://www.drchip.org/astronaut/vim/index.html)
 - [betterSearch](http://www.vim.org/scripts/script.php?script_id=4241)
@@ -56,49 +106,12 @@ last go inside of the folder and execute **BEWARE** this will overwrite .vim and
 - [QQ.vim](http://www.vim.org/scripts/script.php?script_id=5177)
 - [quickfixsigns](http://www.vim.org/scripts/script.php?script_id=2584)
 - [quickfixstatus](https://github.com/dannyob/quickfixstatus)
-- [repeat](https://github.com/garbas/vim-snipmate)
-- [snipmate](https://github.com/garbas/vim-snipmate)
-- [SQLComplete](http://www.vim.org/scripts/script.php?script_id=1572)
-- [sqloracle](http://www.vim.org/scripts/script.php?script_id=2371)
-- [sql.snippets](http://www.vim.org/scripts/script.php?script_id=4861)
-- [SQLUtilities](http://www.vim.org/scripts/script.php?script_id=492)
-- [surround](https://github.com/tpope/vim-surround)
-- [svnj](http://www.vim.org/scripts/script.php?script_id=4888)
-- [Syntastic](https://github.com/scrooloose/syntastic)
-- [The_NERD_tree](https://github.com/scrooloose/nerdtree)
-- [tlib](http://www.vim.org/scripts/script.php?script_id=1863)
-- [UltiSnips](https://github.com/SirVer/ultisnips)
-- [unimpaired](https://github.com/tpope/vim-unimpaired)
-- [unite](https://github.com/Shougo/unite.vim)
-- [vam](https://github.com/MarcWeber/vim-addon-manager)
-- [vim-addon-mw-utils](http://www.vim.org/scripts/script.php?script_id=2940)
-- [vim-autocomplpop](https://github.com/othree/vim-autocomplpop)
-- [vim-autoformat](http://www.vim.org/scripts/script.php?script_id=4337)
-- [vim-commentary](https://github.com/tpope/vim-commentary)
-- [VimCompletesMe](https://github.com/ajh17/VimCompletesMe)
-- [vim-expand-region](https://github.com/terryma/vim-expand-region)
-- [vim-help](https://github.com/dahu/vim-help)
-- [vim-misc](https://github.com/xolox/vim-misc)
-- [vim-online-thesaur](https://github.com/beloglazov/vim-online-thesaurus)
-- [vim-pi](https://bitbucket.org/vimcommunity/vim-pi)
-- [vim-plugins](https://github.com/WolfgangMehner/vim-plugins)
-- [vim-plugin-viewdoc](https://github.com/powerman/vim-plugin-viewdoc)
-- [vim-polyglot](https://github.com/sheerun/vim-polyglot)
-- [vimproc](https://github.com/Shougo/vimproc.vim)
-- [vim-quickrun](https://github.com/thinca/vim-quickrun)
-- [vimshell](https://github.com/Shougo/vimshell.vim)
-- [vim-shellutils](https://github.com/b4b4r07/vim-shellutils)
-- [vim-signify](https://github.com/mhinz/vim-signify)
-- [vim-sneak](https://github.com/justinmk/vim-sneak)
-- [vim-snippets](https://github.com/honza/vim-snippets)
-- [vim-startify](https://github.com/mhinz/vim-startify)
-- [vim-trailing-white](https://github.com/bronson/vim-trailing-whitespace)
-- [vital](https://github.com/vim-jp/vital.vim)
-- [yankstack](https://github.com/maxbrunsfeld/vim-yankstack)
 
-
-# Plugin For Learning Vim
-- [LearnVim](https://github.com/dahu/LearnVim) `:h learnvim`
+## Plugin For Learning Vim
+```vim
+:h learnvim
+```
+- [LearnVim](https://github.com/dahu/LearnVim) 
 
 # Bug
 create a issue github or send me a email if you ask me or there is issue
@@ -107,154 +120,3 @@ my email is juliosueiras@gmail.com
 
 # License
 MIT License
-
-# Introduction
-
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
