@@ -369,3 +369,4 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 noremap <F8> :TagbarToggle<CR>
+let g:syntastic_c_compiler_options = '-w -std=gnu99'
