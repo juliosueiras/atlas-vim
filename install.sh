@@ -18,3 +18,4 @@
 #===============================================================================
 
 mv vim ~/.vim && mv vimrc ~/.vimrc && mv vimrc.addons ~/.vimrc.addons
+echo "export PATH=$PATH:~/.vim/bin" >> ~/.login
