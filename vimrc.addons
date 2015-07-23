@@ -32,11 +32,12 @@ fun! SetupVAM()
 	\ 'lightline.vim', 'tlib', 'EasyMotion', 'vim-startify', 'vim-polyglot', 'Syntastic', 'grep', 'vim-misc',
 	\ 'snipmate', 'PaperColor', 'vital', 'svnj', 'molokai', 'vim-snippets', 'vim-signify',
   \ 'vimshell', 'vim-shellutils', 'vim-plugin-viewdoc', 'QQ.vim',
-	\ 'surround', 'vim-pi', 'CSApprox', 'The_NERD_tree', 'vim-plugins',
-	\ 'vim-addon-mw-utils', 'numbers'], {})
+	\ 'surround', 'vim-pi', 'CSApprox', 'vim-plugins', 'OmniCppComplete', 'ide',
+	\ 'vim-addon-mw-utils', 'tagbar', 'supertab', 'vim-ctrlspace', 'numbers'], {})
 
+  call vam#ActivateAddons(['vimfiler'] , {})
 
-  autocmd FileType sql,plsql call vam#ActivateAddons(['sql.snippets', 'mysqlquery', 'SQLComplete', 'SQLUtilities', 'sqloracle', 'dbext'], {})
+  autocmd FileType sql call vam#ActivateAddons(['sql.snippets', 'mysqlquery', 'SQLComplete', 'SQLUtilities', 'sqloracle', 'dbext'], {})
 endfun
 
 call SetupVAM()

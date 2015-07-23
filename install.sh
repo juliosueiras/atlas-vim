@@ -17,6 +17,7 @@
 #      REVISION:  ---
 #===============================================================================
 
+<<<<<<< HEAD
 read -p "This will overwrtie existings .vim .vimrc and .vimrc.addons in your folder , do you want to procced(y/N)" usr_answer
 if [[ $usr_answer == "y" ]]; then
     rm -rf ~/.vim ~/.vimrc ~/.vimrc.addons
@@ -24,6 +25,7 @@ if [[ $usr_answer == "y" ]]; then
     mv vimrc ~/.vimrc
     mv vimrc.addons ~/.vimrc.addons
     echo 'export PATH=$PATH:~/.vim/bin' >> ~/.login
+    echo 'export PATH=$PATH:~/.vim/bin' >> ~/.bashrc
     exit 0;
 else
     exit 1;
