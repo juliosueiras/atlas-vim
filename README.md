@@ -1,6 +1,4 @@
-# atlas-vim
-
-![logo]()
+![logo](https://raw.githubusercontent.com/juliosueiras/atlas-vim/master/img/logo.png)
 
 
 [![Join the chat at https://gitter.im/juliosueiras/atlas-vim](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/juliosueiras/atlas-vim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
