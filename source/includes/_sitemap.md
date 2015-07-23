@@ -2,4 +2,4 @@
 
 ## [Index](./index.html)
 ## [Plugins](./plugins.html)
-## [Vimrc](./plugins.html)
+## [Vimrc](./vimrc.html)

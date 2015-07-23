@@ -52,7 +52,6 @@ For more description go to [plugins](./plugins.html)
 > - [surround](https://github.com/tpope/vim-surround)
 > - [svnj](http://www.vim.org/scripts/script.php?script_id=4888)
 > - [Syntastic](https://github.com/scrooloose/syntastic)
-> - [The_NERD_tree](https://github.com/scrooloose/nerdtree)
 > - [tlib](http://www.vim.org/scripts/script.php?script_id=1863)
 > - [UltiSnips](https://github.com/SirVer/ultisnips)
 > - [unimpaired](https://github.com/tpope/vim-unimpaired)
@@ -83,7 +82,7 @@ For more description go to [plugins](./plugins.html)
 - [vim-sneak](https://github.com/justinmk/vim-sneak)
 - [vim-snippets](https://github.com/honza/vim-snippets)
 - [vim-startify](https://github.com/mhinz/vim-startify)
-- [vim-trailing-white](https://github.com/bronson/vim-trailing-whitespace)
+- [vim-trailing-whitespace](https://github.com/bronson/vim-trailing-whitespace)
 - [vital](https://github.com/vim-jp/vital.vim)
 - [yankstack](https://github.com/maxbrunsfeld/vim-yankstack)
 - [numbers.vim](https://github.com/myusuf3/numbers.vim)
@@ -106,6 +105,20 @@ For more description go to [plugins](./plugins.html)
 - [QQ.vim](http://www.vim.org/scripts/script.php?script_id=5177)
 - [quickfixsigns](http://www.vim.org/scripts/script.php?script_id=2584)
 - [quickfixstatus](https://github.com/dannyob/quickfixstatus)
+- [ide](https://github.com/vim-scripts/ide)
+- [tagbar](https://github.com/majutsushi/tagbar)
+- [hier](https://github.com/jceb/vim-hier)
+- [vim-ctrlspace](https://github.com/szw/vim-ctrlspace)
+- [OmniCppComplete](https://github.com/vim-scripts/OmniCppComplete)
+- [supertab](https://github.com/ervandew/supertab)
+- [vimfiler](https://github.com/Shougo/vimfiler.vim)
+- [abolish](https://github.com/tpope/vim-abolish)
+- [numbers](https://github.com/myusuf3/numbers.vim)
+
+
+
+
+
 
 ## Plugin For Learning Vim
 ```vim
