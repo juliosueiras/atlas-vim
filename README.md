@@ -27,6 +27,10 @@ For complete list of plugin installed go to [Plugins List](https://juliosueiras.
 ## Plugin For Learning Vim
 - [LearnVim](https://github.com/dahu/LearnVim) `:h learnvim`
 
+## Site to learn vim
+- [Interactive Online Vim Tutorial](www.openvim.com/tutorial.html)
+- [VIM Adventures](http://vim-adventures.com/)
+
 ## Bug
 create a issue github or send me a email if you ask me or there is issue
 my email is juliosueiras@gmail.com
