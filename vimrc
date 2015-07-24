@@ -23,7 +23,6 @@ let g:dbext_default_profile_default = 'type=ORA:user=$ORACLE_USER:passwd=$ORACLE
 let g:dbext_default_type = 'ORA'
 let g:dbext_default_user = '$ORACLE_USER'
 let g:dbext_default_passwd = '$ORACLE_PASSWORD'
-nnoremap <F10> :b <C-Z>
 
 
 """"""""""
@@ -124,7 +123,7 @@ nnoremap Y y$"
 " Move selected lines up and down Yank to the end of the line
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-nnoremap <F9> :VimFilerExplorer -status -find<CR>
+nnoremap <F10> :VimFilerExplorer -status -find<CR>
 
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_tree_leaf_icon = ' '
@@ -173,7 +172,6 @@ nnoremap Y y$"
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-nnoremap <F10> :b <C-Z>
 let g:BASH_Executable = '/bin/bash'
 
 let g:sneak#streak = 1
@@ -369,4 +367,6 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 noremap <F8> :TagbarToggle<CR>
+" to suppress gcc warmings
 let g:syntastic_c_compiler_options = '-w -std=gnu99'
+let g:tmuxline_powerline_separators = 0
