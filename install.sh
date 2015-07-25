@@ -25,8 +25,8 @@ if [[ $usr_answer == "y" ]]; then
     mv vim ~/.vim
     mv vimrc ~/.vimrc
     mv vimrc.addons ~/.vimrc.addons
-    mv theme/tmux.conf ~/.tmux.conf
-    mv theme/theme.tmuxline ~/.theme.tmuxline
+    mv tmux/tmux.conf ~/.tmux.conf
+    mv tmux/theme.tmuxline ~/.theme.tmuxline
     echo 'export PATH=$PATH:~/.vim/bin' >> ~/.login
     echo 'export PATH=$PATH:~/.vim/bin' >> ~/.bashrc
     exit 0;
