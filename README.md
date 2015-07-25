@@ -46,7 +46,7 @@ For complete list of plugin installed go to [Plugins List](https://juliosueiras.
 - [LearnVim](https://github.com/dahu/LearnVim) `:h learnvim`
 
 ## Site to learn vim
-- [Interactive Online Vim Tutorial](https://www.openvim.com/tutorial.html)
+- [Interactive Online Vim Tutorial](http://www.openvim.com/tutorial.html)
 - [VIM Adventures](http://vim-adventures.com/)
 
 ## Bug
