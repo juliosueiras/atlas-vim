@@ -10,11 +10,11 @@ Make of backup of .vim folder and .vimrc(if you have one in your home folder)
 there is two method provided to install
 
 ### Method 1: Automatic Install
-to install this way just run the following command in your shell/putty
-
-~~~shell
-curl https://github.com/juliosueiras/atlas-vim/blob/master/oneline_installer.sh | bash
-~~~
+> to install this way just run the following command in your shell/putty
+> 
+> ~~~shell
+> curl https://github.com/juliosueiras/atlas-vim/blob/master/oneline_installer.sh | bash
+> ~~~
 
 ### Method 2: Manual Install
 > copy the download zip link in the right on github page(in this page)
