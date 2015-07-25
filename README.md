@@ -2,6 +2,9 @@
 
 
 [![Join the chat at https://gitter.im/juliosueiras/atlas-vim](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/juliosueiras/atlas-vim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![readthedocs](https://readthedocs.org/projects/atlas-vim/badge/?version=latest)
+
+## [Project Homepage](http://juliosueiras.github.io/atlas-vim/#site-to-learn-vim)
 
 Vim with Setup for Atlas Server of Sheridan College(this is only for sheridan college student)
 Make of backup of .vim folder and .vimrc(if you have one in your home folder)
