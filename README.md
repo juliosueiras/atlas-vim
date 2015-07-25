@@ -30,14 +30,14 @@ there is two method provided to install
 > next execute
 > 
 > ~~~shell
-> unzip master.zip && mv atlas-vim-master atlas-vim`
+> unzip master.zip && mv atlas-vim-master atlas-vim
 > ~~~
 > 
 > last go inside of the folder and execute **BEWARE** this will overwrite .vim and .vimrc in your home folder(if you have one) make sure to backup it first
 > 
 > ~~~shell
 > ./install.sh
-~~~
+> ~~~
 
 ## Plugins List Installed
 For complete list of plugin installed go to [Plugins List](https://juliosueiras.github.io/atlas-vim/plugins.html)
