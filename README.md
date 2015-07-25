@@ -47,7 +47,7 @@ For complete list of plugin installed go to [Plugins List](https://juliosueiras.
 - [VIM Adventures](http://vim-adventures.com/)
 
 ## Bug
-create a issue github or send me a email if you want ask me or send a me a message in gitter
+create a issue in github or send me a email if you want ask me or send a me a message in gitter
 my email is juliosueiras@gmail.com
 
 
