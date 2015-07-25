@@ -17,23 +17,23 @@ curl https://github.com/juliosueiras/atlas-vim/blob/master/oneline_installer.sh 
 ~~~
 
 ### Method 2: Manual Install
->copy the download zip link in the right on github page(in this page)
-then go to terminal/putty , login to your atlas and run
-
-~~~shell
-wget https://github.com/juliosueiras/atlas-vim/archive/master.zip
-~~~
-
-next execute
-
-~~~shell
-unzip master.zip && mv atlas-vim-master atlas-vim`
-~~~
-
-last go inside of the folder and execute **BEWARE** this will overwrite .vim and .vimrc in your home folder(if you have one) make sure to backup it first
-
-~~~shell
-./install.sh
+> copy the download zip link in the right on github page(in this page)
+> then go to terminal/putty , login to your atlas and run
+> 
+> ~~~shell
+> wget https://github.com/juliosueiras/atlas-vim/archive/master.zip
+> ~~~
+> 
+> next execute
+> 
+> ~~~shell
+> unzip master.zip && mv atlas-vim-master atlas-vim`
+> ~~~
+> 
+> last go inside of the folder and execute **BEWARE** this will overwrite .vim and .vimrc in your home folder(if you have one) make sure to backup it first
+> 
+> ~~~shell
+> ./install.sh
 ~~~
 
 ## Plugins List Installed
