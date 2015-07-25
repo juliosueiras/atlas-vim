@@ -53,123 +53,58 @@
 <p>Vim with Setup for Atlas Server of Sheridan College(this is only for sheridan college student)
 Make of backup of .vim folder and .vimrc(if you have one in your home folder)</p>
 
-<h1 id="instruction">Instruction</h1>
+<h2 id="instruction">Instruction</h2>
 
-<h2 id="step-1">Step 1</h2>
+<p>there is two method provided to install</p>
 
-<p>copy the download zip link in the right on github page(in this page)
-then go to terminal/putty , login to your atlas and run</p>
-
-<p><code class="prettyprint">wget https://github.com/juliosueiras/atlas-vim/archive/master.zip</code></p>
-
-<h2 id="step-2">Step 2</h2>
-
-<p>next execute</p>
-
-<p><code class="prettyprint">unzip master.zip &amp;&amp; mv atlas-vim-master atlas-vim</code></p>
-
-<h2 id="step-3">Step 3</h2>
-
-<p>last go inside of the folder and execute <strong>BEWARE</strong> this will overwrite .vim and .vimrc in your home folder(if you have one) make sure to backup it first</p>
-
-<p><code class="prettyprint">./install.sh</code></p>
-
-<h1 id="plugins-list-installed">Plugins List Installed</h1>
-
-<p>For more description go to <a href="plugins.html">plugins</a></p>
+<h3 id="method-1-automatic-install">Method 1: Automatic Install</h3>
 
 <blockquote>
-<ul>
-<li><a href="https://github.com/garbas/vim-snipmate">repeat</a></li>
-<li><a href="https://github.com/garbas/vim-snipmate">snipmate</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=1572">SQLComplete</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=2371">sqloracle</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=4861">sql.snippets</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=492">SQLUtilities</a></li>
-<li><a href="https://github.com/tpope/vim-surround">surround</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=4888">svnj</a></li>
-<li><a href="https://github.com/scrooloose/syntastic">Syntastic</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=1863">tlib</a></li>
-<li><a href="https://github.com/SirVer/ultisnips">UltiSnips</a></li>
-<li><a href="https://github.com/tpope/vim-unimpaired">unimpaired</a></li>
-<li><a href="https://github.com/Shougo/unite.vim">unite</a></li>
-<li><a href="https://github.com/MarcWeber/vim-addon-manager">vam</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=2940">vim-addon-mw-utils</a></li>
-<li><a href="https://github.com/othree/vim-autocomplpop">vim-autocomplpop</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=4337">vim-autoformat</a></li>
-<li><a href="https://github.com/tpope/vim-commentary">vim-commentary</a></li>
-<li><a href="https://github.com/ajh17/VimCompletesMe">VimCompletesMe</a></li>
-<li><a href="https://github.com/terryma/vim-expand-region">vim-expand-region</a></li>
-<li><a href="https://github.com/dahu/vim-help">vim-help</a></li>
-<li><a href="https://github.com/xolox/vim-misc">vim-misc</a></li>
-<li><a href="https://github.com/beloglazov/vim-online-thesaurus">vim-online-thesaur</a></li>
-<li><a href="https://bitbucket.org/vimcommunity/vim-pi">vim-pi</a></li>
-<li><a href="https://github.com/WolfgangMehner/vim-plugins">vim-plugins</a></li>
-<li><a href="https://github.com/powerman/vim-plugin-viewdoc">vim-plugin-viewdoc</a></li>
-<li><a href="https://github.com/sheerun/vim-polyglot">vim-polyglot</a></li>
-</ul>
+<p>to install this way just run the following command in your shell/putty</p>
+<pre class="highlight shell"><code>curl https://github.com/juliosueiras/atlas-vim/blob/master/oneline_installer.sh | bash
+</code></pre>
 </blockquote>
 
-<p><br>
-<br></p>
+<h3 id="method-2-manual-install">Method 2: Manual Install</h3>
 
-<ul>
-<li><a href="https://github.com/Shougo/vimshell.vim">vimshell</a></li>
-<li><a href="https://github.com/Shougo/vimproc.vim">vimproc</a></li>
-<li><a href="https://github.com/thinca/vim-quickrun">vim-quickrun</a></li>
-<li><a href="https://github.com/b4b4r07/vim-shellutils">vim-shellutils</a></li>
-<li><a href="https://github.com/mhinz/vim-signify">vim-signify</a></li>
-<li><a href="https://github.com/justinmk/vim-sneak">vim-sneak</a></li>
-<li><a href="https://github.com/honza/vim-snippets">vim-snippets</a></li>
-<li><a href="https://github.com/mhinz/vim-startify">vim-startify</a></li>
-<li><a href="https://github.com/bronson/vim-trailing-whitespace">vim-trailing-whitespace</a></li>
-<li><a href="https://github.com/vim-jp/vital.vim">vital</a></li>
-<li><a href="https://github.com/maxbrunsfeld/vim-yankstack">yankstack</a></li>
-<li><a href="https://github.com/myusuf3/numbers.vim">numbers.vim</a></li>
-<li><a href="http://www.drchip.org/astronaut/vim/index.html">Alignment@drchip</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=4241">betterSearch</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=614">CRefVim</a></li>
-<li><a href="https://github.com/godlygeek/csapprox">CSApprox</a></li>
-<li><a href="https://github.com/kien/ctrlp.vim">ctrlp</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=356">dbext</a></li>
-<li><a href="https://github.com/Lokaltog/vim-easymotion">EasyMotion</a></li>
-<li><a href="https://github.com/yegappan/grep">grep</a></li>
-<li><a href="https://bitbucket.org/sjl/gundo.vim">Gundo</a></li>
-<li><a href="https://github.com/jceb/vim-hier">hier</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=3252">L9</a></li>
-<li><a href="https://github.com/itchyny/lightline.vim">lightline.vim</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=39">matchit.zip</a></li>
-<li><a href="https://github.com/tomasr/molokai">molokai</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=2081">mysqlquery</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=5177">PaperColor</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=5177">QQ.vim</a></li>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=2584">quickfixsigns</a></li>
-<li><a href="https://github.com/dannyob/quickfixstatus">quickfixstatus</a></li>
-<li><a href="https://github.com/vim-scripts/ide">ide</a></li>
-<li><a href="https://github.com/majutsushi/tagbar">tagbar</a></li>
-<li><a href="https://github.com/jceb/vim-hier">hier</a></li>
-<li><a href="https://github.com/szw/vim-ctrlspace">vim-ctrlspace</a></li>
-<li><a href="https://github.com/vim-scripts/OmniCppComplete">OmniCppComplete</a></li>
-<li><a href="https://github.com/ervandew/supertab">supertab</a></li>
-<li><a href="https://github.com/Shougo/vimfiler.vim">vimfiler</a></li>
-<li><a href="https://github.com/tpope/vim-abolish">abolish</a></li>
-<li><a href="https://github.com/myusuf3/numbers.vim">numbers</a></li>
-</ul>
-
-<h2 id="plugin-for-learning-vim">Plugin For Learning Vim</h2>
-<pre class="highlight viml"><code><span class="p">:</span><span class="k">h</span> learnvim
+<blockquote>
+<p>copy the download zip link in the right on github page(in this page)
+then go to terminal/putty , login to your atlas and run</p>
+<pre class="highlight shell"><code>wget https://github.com/juliosueiras/atlas-vim/archive/master.zip
 </code></pre>
 
+<p>next execute</p>
+<pre class="highlight shell"><code>unzip master.zip <span class="o">&amp;&amp;</span> mv atlas-vim-master atlas-vim<span class="sb">`</span>
+</code></pre>
+
+<p>last go inside of the folder and execute <strong>BEWARE</strong> this will overwrite .vim and .vimrc in your home folder(if you have one) make sure to backup it first</p>
+<pre class="highlight shell"><code>./install.sh
+</code></pre>
+</blockquote>
+
+<h2 id="plugins-list-installed">Plugins List Installed</h2>
+
+<p>For complete list of plugin installed go to <a href="https://juliosueiras.github.io/atlas-vim/plugins.html">Plugins List</a></p>
+
+<h2 id="plugin-for-learning-vim">Plugin For Learning Vim</h2>
+
 <ul>
-<li><a href="https://github.com/dahu/LearnVim">LearnVim</a> </li>
+<li><a href="https://github.com/dahu/LearnVim">LearnVim</a> <code class="prettyprint">:h learnvim</code></li>
 </ul>
 
-<h1 id="bug">Bug</h1>
+<h2 id="site-to-learn-vim">Site to learn vim</h2>
+
+<ul>
+<li><a href="www.openvim.com/tutorial.html">Interactive Online Vim Tutorial</a></li>
+<li><a href="http://vim-adventures.com/">VIM Adventures</a></li>
+</ul>
+
+<h2 id="bug">Bug</h2>
 
 <p>create a issue github or send me a email if you ask me or there is issue
 my email is juliosueiras@gmail.com</p>
 
-<h1 id="license">License</h1>
+<h2 id="license">License</h2>
 
 <p>MIT License</p>
 
