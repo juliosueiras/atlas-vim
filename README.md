@@ -6,7 +6,7 @@
 Vim with Setup for Atlas Server of Sheridan College(this is only for sheridan college student)
 Make of backup of .vim folder and .vimrc(if you have one in your home folder)
 
-## Instruction
+## Installation
 there is two method provided to install
 
 ### Method 1: Automatic Install
