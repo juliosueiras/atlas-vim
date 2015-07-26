@@ -370,3 +370,4 @@ noremap <F8> :TagbarToggle<CR>
 " to suppress gcc warmings
 let g:syntastic_c_compiler_options = '-w -std=gnu99'
 let g:tmuxline_powerline_separators = 0
+let g:syntastic_sh_checkers = ['sh', 'checkbashisms']
