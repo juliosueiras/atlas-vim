@@ -360,7 +360,7 @@ window		A window is a place where a buffer can be displayed.  There is
 		any number of windows simultaneously.  Having a buffer that
 		isn't displayed in a window is useful when switching between
 		different tasks, letting you walk away from half-finished work
-		(See |'hidden'|).  Having a buffer that is displayed in two
+		(See 'hidden').  Having a buffer that is displayed in two
 		windows can be useful when trying to work on one part of the
 		buffer based upon some context provided in another part of the
 		buffer that's far away.
@@ -442,7 +442,7 @@ options.  As a quick overview:
 
 - :set option=value	Sets "option" to "value"
 - :set option?		Shows the current value of "option"
-- :echo &option 	An alternate way to show the value of "option"
+- :echo &option		An alternate way to show the value of "option"
 
 E.g. To check the current value of 'shiftwidth' and then change it to 4:
 >
@@ -454,6 +454,14 @@ character at the start of the option name to make sure your search doesn't
 clash with other entries in the help system. E.g.   :help 'exp   will find the
 'expandtab' option, but   :help exp   will find the |expression| evaluation
 entry.  The use of help prefixes like ( ' ) is explained in |help-context|
+
+Knowing Where a Setting Was Last Set~
+
+Use the |:verbose| command to show where a setting was last set from. This is
+very useful for tracking down the source of unexpected option values.
+>
+  :verbose set sw?
+<
 
 3. GUI Option Browser                            *learnvim-option-browser*
 
@@ -472,7 +480,7 @@ Solution: ~
 
 For tabs and indents:
 >
- 	:options
+	:options
 <
 Scroll down the Table of Contents and press Enter on the '15 tabs and
 indenting' line.  This will jump you to the set of options controlling how Vim
@@ -480,7 +488,7 @@ manages indentation.
 
 Likewise, for the GUI Toolbar problem:
 >
- 	:options
+	:options
 <
 Scroll down or search for GUI (/GUI) and press Enter on the '10 GUI' line.
 
@@ -497,20 +505,20 @@ Example: ~
 Say you're browsing the options and decide that you want to enable 'smarttab'.
 You see the line:
 >
- 	set nosta	sta
+	set nosta	sta
 <
 If you press Enter on that line then you will enable smarttabs.  Copying that
 line to your ~/.vimrc file will work, but it's unnecessary and unsightly to
 have the option turned off and then on like that.  So, when adding this to your
 ~/.vimrc, change the line like this:
 >
- 	set sta
+	set sta
 <
 Actually, it is a good practice to use the full name of an option so that when
 you come back to your ~/.vimrc file in six months' time you will be able to
 understand what the setting means.  So, change that line to:
 >
- 	set smarttab
+	set smarttab
 ------------------------------------------------------------------------------
 
 ==============================================================================
@@ -532,7 +540,7 @@ Put this in your personal vimrc file (|learnvim-personal-vimrc-filename|):
 	" Buffer (File) Options:
 	set hidden                     " Edit multiple unsaved files at the same time
 	set confirm                    " Prompt to save unsaved changes when exiting
-	                               " Keep various histories between edits
+				       " Keep various histories between edits
 	set viminfo='1000,f1,<500,:100,/100,h
 
 	" Search Options:
@@ -554,7 +562,7 @@ Put this in your personal vimrc file (|learnvim-personal-vimrc-filename|):
 	set showcmd                    " Show (partial) command in status line.
 	set laststatus=2               " Always show a status line
 	set cmdheight=2                " Prevent "Press Enter" messages
-	                               " Show detailed information in status line
+				       " Show detailed information in status line
 	set statusline=%f%m%r%h%w\ [%n:%{&ff}/%Y]%=[0x\%04.4B][%03v][%p%%\ line\ %l\ of\ %L]
 
 	" Interface Options:
@@ -626,7 +634,7 @@ too:
 		among programmers.  http://www.jwz.org/doc/tabs-vs-spaces.html
 
 - 'colorscheme'	See |:syn-default-override|.  There are many more themes to
- 		choose from at htp://www.vim.org/scripts/
+		choose from at htp://www.vim.org/scripts/
 
 - 'spell' and	Enable spell checking in your preferred language.
   'spelllang'
@@ -635,8 +643,7 @@ too:
 		sessions.
 
 - 'whichwrap'	Control which keys allow you to wrap around start and end of
-  		lines.
-
+		lines.
 
 3. Your Own gvimrc File                                  *learnvim-gvimrc*
 
@@ -660,6 +667,26 @@ $HOME/.gvimrc because they are reset when the GUI is started.
 
 ##############################################################################
 INTERMEDIATE TOPICS                         *lv_I* *learnvim-Intermediate*
+
+|learnvim-motion|                 Motion
+|learnvim-repeat|                 Repeating Changes
+|learnvim-completion|             Completion
+|learnvim-marks|                  Marks And Mark Motions
+|learnvim-visual-mode|            Visual Mode
+|learnvim-buffers-args|           Buffers And Args
+|learnvim-windows|                Windows
+|learnvim-tabs|                   Tabs
+|learnvim-registers|              Registers
+|learnvim-ranges|                 Ranges
+|learnvim-searching-replacing|    Searching And Replacing
+|learnvim-large-edits|            Large Edits
+|learnvim-format-indent|          Formatting And Indenting
+|learnvim-tags|                   Tags
+|learnvim-quickfix|               Quickfix
+|learnvim-folding|                Folding
+|learnvim-diffing|                Diffing
+|learnvim-spell-check|            Spell Check
+|learnvim-maps-abbreviations|     Maps And Abbreviations
 
 You don't need to worry about competencies anymore -- you have your Vim
 Driver's license, provisional plates.  You're allowed to drive solo, but
@@ -842,6 +869,11 @@ QUIZ~
 
 
 ==============================================================================
+COMPLETION                                           *learnvim-completion*
+
+TODO
+
+==============================================================================
 MARKS AND MARK MOTIONS                                    *learnvim-marks*
 
 Vim has marks (bookmarks) -- places you can quickly return to later.  See
@@ -879,7 +911,7 @@ Becoming an Expert Navigator~
 
 What else is there to learn from |motion.txt|?
 
-* |object-motions| 	Larger objects, like sentences, paragraphs and
+* |object-motions|	Larger objects, like sentences, paragraphs and
 			sections.
 * |jump-motions|	Moving up and down the jump list as well as the
 			related |change-list-jumps|.
@@ -911,6 +943,815 @@ QUIZ~
 
 
 ==============================================================================
+VISUAL MODE                                         *learnvim-visual-mode*
+
+TODO
+
+==============================================================================
+BUFFERS AND ARGS                                   *learnvim-buffers-args*
+
+Read |windows-intro| for an overview of buffers, windows and tab-pages in Vim.
+
+A visual introduction to Vim's Buffers, Windows and Tabs:
+http://i.imgur.com/3ULsNaX.jpg
+
+An excellent explanation of buffers, windows and tabs in Vim:
+http://stackoverflow.com/questions/26708822/why-do-vim-experts-prefer-buffers-over-tabs/26710166#26710166
+
+Editing Files~
+
+The reference for this section is |editing.txt|.
+
+Commands of interest:
+|:edit|   |:enew|    |:find|
+|:write|  |:saveas|  |:quit|
+|CTRL-^|  |gf|
+
+Read:
+|07.1| - Editing multiple files
+|07.2| - Listing files
+|07.3| - Jumping between files
+
+NOTE: The author does not recommend the use of the |:next| and |:previous|
+commands for navigating between files. Use the method shown in
+|learnvim-buffer-list| Instead.
+
+
+Working Directory and Paths~
+
+Points of interest:
+'path'  |file-searching|
+|:cd|     |:lcd|     |:pwd|
+
+The default unix 'path' is ".,/usr/include,," which is not terribly useful to
+many, especially if you're not a C programmer. Instead, use this as your default
+path:
+>
+  set path=.,**
+<
+And override it with more specific details on a per-project basis.
+
+The |:find| command searches your 'path', however it is still limited (like
+the |:edit| command) to opening only one file at a time. Use the |:args| command
+to open multiple files simultaneously.
+
+Browsing Files~
+
+The |netrw| plugin comes standard with Vim and is useful as a file browser. It
+can also be used to edit remote files through SSH, HTTP, FTP and other protocols.
+
+Fuzzy File Finders~
+
+There are several external plugins available for quickly finding and editing
+files in your project. Two recommended ones are:
+
+* https://github.com/kien/ctrlp.vim
+* https://github.com/dahu/VimFindsMe                     |learnvim-vim-finds-me|
+
+                                                          *learnvim-buffer-list*
+The Buffer List~
+
+Use the |:ls| command to show the list of buffers (files) that you're currently
+editing.
+
+If you have the 'hidden' option enabled, you can have multiple modified
+buffers open concurrently.
+
+Use the |:b| command to switch between buffers. You can use a buffer number, or
+the partial name of a buffer as the argument to the :b command. Use |c_ctrl-d|
+to show a list of possible buffer names.
+
+These three things (two commands and the 'hidden' option) combine together to
+provide a very effective buffer workflow within Vim.  In fact, comics have been
+created about this powerful combination: Entry #4 - Flying is faster than
+cycling ( http://of-vim-and-vigor.blogspot.com/p/vim-vigor-comic.html )
+
+The map from the Flying cartoon:
+>
+  nnoremap <leader>l :ls<cr>:b<space>
+<
+
+Operating On All Buffers~
+
+To perform a series of commands on all open buffers, use |:bufdo|.
+
+Example: To search for `something` in all buffers:
+>
+  :call setqflist([])
+  :bufdo grepadd! something %
+<
+
+Buffer List Problems~
+
+There are two problems with the buffer list:
+1. It isn't able to be reordered,
+2. It isn't able to be renumbered.
+
+Ordering~
+
+We sometimes wish we could re-order the buffers so that we can group related
+ones together: all text files together and all source files before them, say.
+The buffer number is fixed at the time the buffer is created and can never be
+changed throughout the lifetime of the Vim session - it'd be much nicer to be
+able to re-order these as and when we see fit. We can't do this with the buffer
+list.
+
+Numbering~
+
+When buffers are removed from the buffer list, they leave holes in the
+numbering of listed buffers. Many plugins use temporary buffers (some a LOT)
+which can leave huge holes in the numbering of buffers. If you like to jump to
+buffers by remembering their buffer number, it can be a bit unsettling to know
+that you need to jump to buffers 1, 2, 6 and 11 - it'd be much nicer to (even
+if only temporarily) renumber those buffers to: 1, 2, 3, and 4 respectively. We
+can't do this with the buffer list.
+
+While the buffer list is and always will be useful, to solve these two
+problems, we have the Argument List.
+
+Argument List~
+
+Read |arglist| for details not covered here.
+
+Each window can have a separate argument list. You're free to set and reset the
+argument list as and when you see fit.
+
+Useful Arglist Commands~
+
+To set the current window's argument list to the .c files in the src/
+directory:
+>
+  :args src/*.c
+<
+
+To do that recursively within all of the subdirectories:
+>
+  :args src/**/*.c
+<
+
+To see your current argument list:
+>
+  :args
+<
+
+To add the .h files to the argument list:
+>
+  :argadd src/**/*.h
+<
+
+To jump to an argument by partial buffer (file) name match:
+>
+  :argedit {partial name}
+<
+
+To jump to an argument by (1-based) index:
+>
+  :argument {index}
+<
+
+To perform an operation on all of your arguments in a single command:
+>
+  :argdo %s/Long live \zsthe buffer list\ze!/argument lists/ge | update
+<
+
+If you |:quit| before visiting all of the files in your argument list, Vim will
+ask you to confirm. To prevent that, use |:qa| instead.
+
+Local vs Global~
+
+If you open a new window, it will inherit the parent window's argument list.
+There are functions which will attach to the global argument list or create a
+new local argument list for the current window.
+See |:argglobal| and |:arglocal|
+
+Plugin Support via VFM~
+
+These commands are useful but a little frustrating to use in their native form.
+The VimFindsMe (|learnvim-vim-finds-me|) plugin has support for the argument
+list, removing these frustrations.
+
+Other Buffer Commands~
+
+The list of commands from |:badd| onwards in the |windows.txt| help file show
+the other buffer commands. Another excellent normal-mode command for navigating
+buffers is |ctrl-6| to switch between the |current-file| and the
+|alternate-file|.
+
+
+QUIZ~
+
+1. What is a buffer? What is the buffer list?
+
+2. What are the two big disadvantages of the buffer list?
+
+3. What is the argument list?
+
+4. How do you show the argument list?
+
+5. How do you set the argument list?
+
+6. How do you add a file to the argument list?
+
+7. How do you jump to a file in the argument list?
+    i. by name?
+   ii. by number?
+
+8. How does the VFM plugin make using the argument list easier?
+
+
+==============================================================================
+WINDOWS                                                 *learnvim-windows*
+
+See the user manual section |usr_08.txt| for an introduction to using windows in
+Vim. The reference manual for this section is |windows.txt|.
+
+A visual introduction to Vim's Buffers, Windows and Tabs:
+http://i.imgur.com/3ULsNaX.jpg
+
+An excellent explanation of buffers, windows and tabs in Vim:
+http://stackoverflow.com/questions/26708822/why-do-vim-experts-prefer-buffers-over-tabs/26710166#26710166
+
+QUIZ~
+
+1. What command should you use to prevent accidentally exiting Vim when closing
+   a window?
+
+2. The normal mode command |CTRL-W_f| edits the file under the cursor in a new
+   window.
+    i. What CTRL-W command is equivalent to the |:only| command?
+   ii. Do all of Vim's Window ex commands have a counterpart through CTRL-W?
+
+3. What single command is equivalent to:
+>
+    :split | enew
+<
+
+4. |:vsplit| and |:vnew| are explicit commands for working with vertical
+   windows. What can you use if there is no explicit `:v...` command for a
+   window operation that you'd like to do vertically?
+
+5. What's the difference between |CTRL-W_h| and |CTRL-W_H|?
+
+
+Operating on Multiple Windows~
+
+You would have found |:qall| and |:wall| in |08.6| but there was no mention
+there about performing an action other than closing or saving on all windows. To
+do this, we need to use the |:windo| command.
+
+'colorcolumn', 'cursorcolumn', 'cursorline', 'list', 'number' and
+those controlling |folding| are all examples of useful options to set for all
+windows simultaneously.
+
+Example: To reload all of the buffers in the currently visable windows:
+>
+  :windo e
+<
+
+Compare |:windo| with |:bufdo|. How does the following command differ from the
+:windo one above?
+>
+  :bufdo e
+<
+
+
+Statusline~
+
+Most applications have a statusline at the bottom of windows containing various
+pieces of useful information about current state. Vim provides this in two ways:
+
+1. The more simplistic 'ruler', and
+2. The more featureful 'statusline'.
+
+Scrooloose has a colourful introduction to Vim's statusline:
+http://got-ravings.blogspot.sg/2008/08/vim-pr0n-making-statuslines-that-own.html
+
+A suggested statusline is:
+>
+  set statusline=%f%m%r%h%w\ [%n:%{&ff}/%Y]\%{&paste?'\ paste':''}%=[0x\%04.4B][%03v][%p%%\ line\ %l\ of\ %L]
+<
+See 'statusline' for details about the chosen options.
+
+NOTE: The 'laststatus' option determins which windows show a statusline.
+      To see a statusline in all windows:
+>
+        set laststatus=2
+<
+
+
+==============================================================================
+TABS                                                       *learnvim-tabs*
+
+See the user manual section |08.9| for an introduction to using tabs in
+Vim. The reference manual for this section is |tabpage.txt|.
+
+A visual introduction to Vim's Buffers, Windows and Tabs:
+http://i.imgur.com/3ULsNaX.jpg
+
+An excellent explanation of buffers, windows and tabs in Vim:
+http://stackoverflow.com/questions/26708822/why-do-vim-experts-prefer-buffers-over-tabs/26710166#26710166
+
+NOTE: Trying to force one buffer to stay in one tab page is highly unrecommended
+because it violates Vim's natural workflow. See tabpages instead as separate
+workspaces. Open a new tab page when you need to perform a task that will
+interfere with the window layout or buffer positions you're currently working
+with. Some typical examples where a new tab page is suggested:
+
+1. Opening a different help file to the one you're currently browsing.
+2. Temporarily working on a different project.
+3. Creating a pristine environment for a diff.
+
+QUIZ~
+
+1. Why is "tabpage" such a bad name for this feature in Vim? What are some
+   better names?
+
+2. If |:bufdo| operates on all buffers and |:windo| operates on all windows,
+   what command do you think operates on all tab-pages?
+
+3. What is the normal mode command similar to |CTRL-W_f| for opening the file
+   under the cursor in a new tab page?
+
+
+==============================================================================
+REGISTERS                                             *learnvim-registers*
+
+Registers are covered in sections |04.6| and |09.3| in the user manual.
+
+Most applications use the "clipboard" to handle cut, copy and paste operations.
+In Vim, the location for such operations is not called the clipboard, but rather
+a "register". Vim has 48 such |registers| (and counting! -- A recently submitted
+patch proposes adding a new register to Vim that will hold the last |f||F||t|T|
+search).
+
+The registers are accessed through the notation `"<register>` -- that is, in
+normal mode, press the double-quote key followed by the desired single-letter
+register identifier. For example, to delete the current word (|diw|) into
+register 'a', use: >
+  "adiw
+<
+
+CLIPBOARD~
+
+The |quotestar| ("*) register corresponds to the X selection buffer (pasted with
+<MiddleClick>), and the |quoteplus| ("+) register corresponds to the system
+clipboard (pasted with <C-v> or Edit->Paste). On windows, both registers are for
+the system clipboard. To use the clipboard in terminal vim, vim must be built
+with |+xterm_clipboard|.
+
+To copy the whole buffer to the system clipboard, use: >
+  :%y+
+<
+
+Read |clipboard| for further details.
+
+OPTIONS~
+
+The following options influence register use in Vim:
+'clipboard'
+'paste'
+'pastetoggle'
+'mouse'
+
+With `:set mouse=a` you can middle-click to paste without worrying about setting
+paste / nopaste / pastetoggle.
+
+APPENDING~
+
+Using the lower-case form of the 26 named registers (a-z) will overwrite the
+register with the new content specified. Using the upper-case form (A-Z) will
+append instead. A common use for this is to combine it with the |:global|
+command (discussed later in |learnvim-large-edits|) as shown here: >
+  qaq:g/^\C[A-Z]\{2,}/y A
+<
+Will collect into register "a" all lines starting with two or more upper-case
+letters. This could be used in a Vim help file, for example, to quickly create a
+TOC from existing helpfile content.
+
+For more information on the commands used there, see |q| and |:yank|.
+NOTE: The idiom "qaq" is a quick way to clear register "a". Likewise, "qqq"
+clears register "q".
+
+SCRIPTING~
+
+In VimScript, access to the registers is via the `@` symbol instead of the `"`
+symbol because `"` is the comment character. You can assign to registers with
+the |:let-@| command. For example, to explicitly set the current search term,
+use: >
+  :let @/ = 'example'
+<
+You can assign to all of the named variables as well as the clipboard variables.
+If you have collected lines matching a pattern into register "a" and would like
+to paste that into an external application through the system clipboard, use: >
+  :let @+ = @a
+<
+
+An infographic on Vim's registers:
+http://of-vim-and-vigor.blogspot.sg/2012/01/rap-on-vims-registers.html
+
+
+==============================================================================
+RANGES                                                   *learnvim-ranges*
+
+Section |10.3| in the user manual covers |cmdline-ranges|.
+
+A good introduction to ranges: http://vim.wikia.com/wiki/Ranges
+
+An infographic: http://of-vim-and-vigor.blogspot.sg/2012/02/vim-ranger.html
+
+
+==============================================================================
+SEARCHING AND REPLACING                     *learnvim-searching-replacing*
+
+Vim uses regular expressions (regex) for searching and replacing. And it uses
+its own regex flavour -- NOT PCRE. The technical details are covered in
+|pattern.txt|.
+
+                                                          *learnvim-magic*
+Magic~
+
+Regular expressions are designed for complex searches within text, requiring the
+use of several special characters to specify complex matches. These special
+characters do not represent their literal value but are considered to have
+"magical" meaning within the regex. For example, the `.` character does not
+match a '.' (period) but rather matches any single character (except for a
+newline). Vim has several magic modes but the beginner is strongly urged to use
+Vim's regular magic setting and experiment with the other modes after they have
+become comfortable and competent with the default.
+
+CAUTION:
+
+* Do not modify the 'magic' setting; leave it as the default.
+* Do not use the 'gdefault' setting.
+* Start by learning standard |/magic| mode in Vim's regular expressions.
+
+                                                      *learnvim-searching*
+Searching~
+
+To initiate a forward search in Vim, use |/|. Use |?| to search backwards from
+the cursor.
+
+
+Read |03.9| now to learn about three special characters (atoms) in regular
+expressions.
+
+Quiz~
+
+1. What were the three special atoms introduced in |03.9|?
+
+2. How would you search for a literal '.' character?
+
+3. What's the difference between |/| and |?|?
+
+Read |usr_27.txt| now for a more thorough coverage of searching with regex in
+Vim.
+
+Jump to your practice file now and try various search patterns. Try searching
+for special characters too -- remember how to represent them in a search
+pattern?
+See |setting-up-a-practice-file| if you haven't done so already.
+
+Quiz~
+
+1. Show two different ways to handle case matching (ignoring / honouring) with
+   Vim regexes.
+
+2. What is the option for allowing pattern searches to wrap around the
+   top/bottom of the buffer? When wouldn't you want this option enabled?
+
+3. How do you jump to the end of a pattern match?
+
+4. How do you simply repeat the prior search pattern? Show two ways. Consider
+   forward and backward solutions.
+
+5. '\n' and '\r' are not the same thing!
+    i. What's the difference between '\n' and '\r' in |/character-classes|?
+   ii. What's the story with '\n' and '\r' in |sub-replace-special|?
+  iii. Which one would you use to replace something with a newline?
+   iv. Which one would you use to match a newline?
+    v. Which one of the following splits colon separated pieces on the current
+       line into multiple lines.
+>
+         :s/:/\n/g
+         :s/:/\r/g
+<
+   vi. Which one of the following joins multiple lines together?
+>
+         :1,10 s/\n/ /
+         :1,10 s/\r/ /
+<
+  vii. Why is the `/g` flag useless here?
+>
+         :1,10 s/\n/ /g
+<
+
+Regex Tutor~
+
+https://github.com/dahu/VimRegexTutor will gently guide you through learning
+Vim's regular expression language more completely.
+
+                                                      *learnvim-replacing*
+Replacing~
+
+In Vim, "replacing" is performed with the |:substitute| command (often
+abbreviated to just |:s|):
+>
+  :s/from/to
+<
+Where `from` is a regular expression as covered in |learnvim-searching|.
+
+Jump to your practice file now and try a few |:s| commands.
+
+HINT: By default, the |:s| command acts on the current line only. You should
+practice using some ranges as covered earlier in |learnvim-ranges|.
+
+See |setting-up-a-practice-file| if you haven't done so already.
+
+
+Read |10.2| now to learn about simple search and replace in Vim.
+
+Quiz~
+
+1. We covered |learnvim-ranges| earlier.
+   i. What is a range?
+  ii. What range does '%' represent?
+ iii. How would I specify a range that covered the current cursor through to the
+      end of the buffer?
+
+2. All lines vs all occurrences on a line.
+   i. How do I perform a substitution on all lines in the file?
+  ii. How do I perform a substitution on all occurrences of the current line
+      only?
+ iii. How do I perform a substitution on all occurrences of all lines?
+
+3. How cool is the |:s_c| flag?
+
+Complex Replacements~
+
+Read |sub-replace-special| and then try various special replacements in your
+practice file.
+
+Quiz~
+
+1. How do you use the whole matched text in the replacement?
+
+2. How do you specify pieces to capture in the `from` part of |:substitute|?
+
+3. How do you refer to captured pieces in the `to` part?
+
+4. How would you swap every pair of 'word_1:word_2' in the file so that it
+   resulted in 'word_2:word_1'.
+
+5. How would you change the case of all words in a line to Title Case?
+
+Read |sub-replace-expression| and then try to use the `\=` replacement in your
+practice file.
+
+Quiz~
+
+1. How would you insert the line number at the start of every line in
+   the buffer?
+
+2. How would you number (starting from 1) a range of lines somewhere in a file?
+
+
+==============================================================================
+LARGE EDITS                                         *learnvim-large-edits*
+
+Section |10.4| in the user manual covers the |:global| command discussed here.
+
+The |:substitute| command discussed in the prior section has the following
+form: >
+  :[range]s[ubstitute]/{from}/{to}/[flags]
+<
+where the default range is the current line only.
+
+The |:global| command has the following form: >
+  :[range]g[lobal]/{pattern}/{command}
+<
+where the default range is the whole buffer.
+
+The |:global| command takes three things:
+1. A range (defaulting to the whole buffer)
+2. A pattern to match lines within the specified range.
+3. A command to perform against every matched line.
+
+The following two commands are identical: >
+  :%s/foo/bar/g
+  :g/foo/s//bar/g
+<
+
+However the |:global| version is more flexible. Consider: >
+  :g!^\s*//!s!fahren/Fahren/g
+<
+Which corrects spelling mistakes in comments without disrupting code.
+
+So, one feature of |:global| is that it turns single-line commands into ranged
+commands, but that is its least useful attribute. The |:global| command actually
+accepts a set of |:bar| separated commands, allowing multiple operations on each
+match. Compare these two commands: >
+
+  :% substitute /apples/bananas/g | substitute /cherries/oranges/g
+
+  :global /apples\|cherries/ substitute /apples/bananas/g | substitute /cherries/oranges/g
+<
+The first command is probably not what the developer intended because
+|:substitute| does not take a set of commands, so the second substitute uses its
+default range, which is the current line. BUT BE CAREFUL: The current line is
+not what you think it is. The current line will be wherever the prior command
+leaves it. In the case given, it will be on the final line in the buffer that
+had "apples". IF that line also contained "cherries" THEN the second substitute
+would apply.
+
+GREP -- The Default Command~
+
+The default command for |:global| is |:print|, making the mnemonic:
+
+  :g/re/p
+
+Indeed, |:g| is very often used to quickly show lines from the current buffer
+that match a pattern, like: >
+  :g/^func
+<
+
+Any Command~
+
+The |:global| command can be used to execute any text editing |ex-cmd| which
+includes the |:normal| command for executing normal mode commands. This command
+lets you execute macros within the |:global| command. Example: >
+
+  :let @a = "0Wyiw:-pu\<CR>gcc"
+  :g/^func/normal @a
+<
+Assuming you had a macro in register "a" that duplicated the second word on a
+line into a comment line prior to it, then the global command shown will execute
+that macro on all function definitions in the buffer.
+
+NOTE: The `gcc` command there is from Tim Pope's Commentary plugin.
+      See |learnvim-commentary|.
+
+Deleting Blank Lines~
+>
+  :g/^$/d
+  :g/^\s*$/d
+<
+|:delete|
+
+Reversing Line Order~
+>
+  :g/^/m0
+<
+|:move|
+
+Move Matches To End Of File~
+>
+  :g/^func/m$
+<
+|move|
+
+Copy Matches To End Of File~
+>
+  :g/^func/t$
+<
+|:copy| |:t|
+
+Collect Matches Into Register A~
+>
+  qaq:g/^func/y A
+<
+|q| |:yank|
+NOTE: The idiom "qaq" is a quick way to clear register "a". Likewise, "qqq"
+clears register "q".
+
+Some more examples are shown at http://vim.wikia.com/wiki/Power_of_g
+
+                                                            *learnvim-waz*
+WAZ~
+
+http://dahu.github.io/vim_waz_ere/
+
+The Walter Alan Zintz Vim tutorial is a comprehensive exploration of the
+|:substitute| and |:global| commands. It has quizzes too!
+
+
+==============================================================================
+FORMATTING AND INDENTING                          *learnvim-format-indent*
+
+                                                     *learnvim-formatting*
+FORMATTING~
+
+Formatting is the process of modifying the layout of a block of text to make it
+flow better. Adjusting a paragraph to have all lines wrapped at 'textwidth',
+indenting lines within a list and automatically prepending the comment leader
+are all examples of formatting.
+
+Vim provides several methods of reformatting your text. The commands and options
+are quickly covered here. Read more about this in:
+|formatting|
+|ins-textwidth|
+
+Automatic~
+
+Using the "a" value of 'formatoptions' will enable automatic formatting as you
+type. This can cause unexpected and unwanted modifications to the layout of your
+text and should only be used for non-code prose. Read |auto-format| for more
+details.
+
+Manual~
+
+Text~
+
+A common formatting action in word processors is to change the paragraph to:
+
+|:left| aligned.
+							       |:right| aligned.
+				Or |:center|ed.
+Programmers don't need this feature often, but it's nice to know Vim has it.
+
+The |gq| command will reformat the selected lines using either an internal
+algorithm, a script-defined expression (function) or an external tool.
+
+The |gw| command uses an internal algorithm to reformat the selected lines and
+puts the cursor back at the same position in the text afterwards.
+
+For a more comprehensive coverage of using Vim as a text (prose) writing tool,
+see http://www.drbunsen.org/writing-in-vim/
+
+Asciidoc ( http://asciidoc.org/ or http://asciidoctor.org/ ) is an excellent
+text processor. The https://github.com/dahu/vim-asciidoc plugin provides better
+formatting support among other features.
+
+Code~
+
+A more typical formatting requirement for programmers is to reflow or beautify
+code. If all you want to do is reindent your code nicely, see
+|learnvim-indenting|. If you want to alter the way parentheses and braces are
+used in expressions and blocks within your code, you will need either a plugin
+that provides the necessary 'formatexpr' or an external tool used by the
+'formatprg' option.
+
+On linux, the `indent` tool is one such example. Another is the Artistic Style
+tool: http://astyle.sourceforge.net/
+
+The following options are related to formatting:
+'textwidth'      The maximum width of the line as you're typing.
+'formatoptions'  Control how automatic formatting is done.
+'formatlistpat'  Support the "n" flag in 'formatoptions' for formatting lists.
+'formatprg'      An external program to format lines operated on by the |gq|
+                 command.
+'formatexpr'     An expression (function) to format lines operated on by the
+                 |gq| command.
+'paste'          Formatting is temporarily disabled while "paste" is enabled.
+
+
+                                                      *learnvim-indenting*
+INDENTING~
+
+Nicely indented code looks better, reads better and feels better. There are many
+tools available for reindenting source code. The `indent` tool for C style
+languages and the Artistic Style tool ( http://astyle.sourceforge.net/ ) are two
+examples. Search for an indent tool for your preferred language.
+
+Vim has built-in support for |C-indenting| and 'lisp'.
+
+Vim also supports indenting many languages through 'filetype' plugins. Make sure
+that the |:filetype| command says: >
+  filetype detection:ON  plugin:ON  indent:ON
+<
+and if it doesn't, add the following line to your $MYVIMRC: >
+  filetype plugin indent on
+<
+
+Use the |=| command to reindent lines within Vim. The |>>| and |<<| keys
+increase and decrease indent respectively.
+
+Some options related to indenting:
+'equalprg'    An external program to reindent lines operated on by the |=|
+              command.
+'indentexpr'  An expression (function) to reindent lines operated on by the
+              |=| command.
+'cindent'     Force Vim's internal indenting to C style (uses 'cinkeys' and
+              'cinoptions').
+'cinkeys'     Keys that trigger C style indenting.
+'cinoptions'  Options to control how C style code is indented.
+'autoindent'  A recommended option that provides good default indenting and is
+              used by many of the filetype-specific indent plugins.
+'smartindent' DEPRECATED. SHOULD NO LONGER BE USED. Use 'autoindent' and
+              "filetype plugin indent on" in your $MYVIMRC instead.
+'expandtab'
+'shiftwidth'  Default indent amount. Also affects |=|, |>>|, |<<|
+'tabstop'     Changes the width of the TAB character. You should usually leave
+              this as the industry default of 8 spaces.
+'softtabstop' Affects the <TAB> and <BS> keys.
+
+For the complete set of indenting options in Vim, see section 15 (Indenting and
+Tabs) in |:options|.
+
+A deeper introduction to indenting source code is covered in
+http://vim.wikia.com/wiki/Indenting_source_code .
+
+
+==============================================================================
 TAGS                                                       *learnvim-tags*
 
 Read |tags-and-searches| for extra detail not covered here.
@@ -930,12 +1771,12 @@ in the root of your project.
 
 But if you need anything fancier than that, consult  `man ctags`  for guidance.
 
-2. A correctly set |'tags'| option
+2. A correctly set 'tags' option
 
 The Vim default of "./tags,tags" is probably sufficient for most projects but
 you might want to include library tag files or a project-common tags file.
 
-3. A correctly set |'path'| option
+3. A correctly set 'path' option
 
 A good default is:
 >
@@ -1032,7 +1873,7 @@ QUIZ~
 
 1. What is a tag? Why are they useful?
 
-2. With respect to options like |'path'| and |'tags'| what do the following
+2. With respect to options like 'path' and 'tags' what do the following
    mean:
      i. .
     ii. *
@@ -1051,172 +1892,40 @@ QUIZ~
 
 
 ==============================================================================
-BUFFERS AND ARGS                                   *learnvim-buffers-args*
+QUICKFIX                                               *learnvim-quickfix*
 
-Read |windows-intro| for an overview of buffers, windows and tab-pages in Vim.
-
-The Buffer List~
-
-Use the |:ls| command to show the list of buffers (files) that you're currently
-editing.
-
-If you have the |'hidden'| option enabled, you can have multiple modified
-buffers open concurrently.
-
-Use the |:b| command to switch between buffers. You can use a buffer number, or
-the partial name of a buffer as the argument to the :b command. Use |c_ctrl-d|
-to show a list of possible buffer names.
-
-These three things (two commands and the 'hidden' option) combine together to
-provide a very effective buffer workflow within Vim.  In fact, comics have been
-created about this powerful combination: Entry #4 - Flying is faster than
-cycling ( http://of-vim-and-vigor.blogspot.com/p/vim-vigor-comic.html )
-
-But there are two problems with the buffer list:
-1. It isn't able to be reordered,
-2. It isn't able to be renumbered.
-
-Ordering~
-
-We sometimes wish we could re-order the buffers so that we can group related
-ones together: all text files together and all source files before them, say.
-The buffer number is fixed at the time the buffer is created and can never be
-changed throughout the lifetime of the Vim session - it'd be much nicer to be
-able to re-order these as and when we see fit. We can't do this with the buffer
-list.
-
-Numbering~
-
-When buffers are removed from the buffer list, they leave holes in the
-numbering of listed buffers. Many plugins use temporary buffers (some a LOT)
-which can leave huge holes in the numbering of buffers. If you like to jump to
-buffers by remembering their buffer number, it can be a bit unsettling to know
-that you need to jump to buffers 1, 2, 6 and 11 - it'd be much nicer to (even
-if only temporarily) renumber those buffers to: 1, 2, 3, and 4 respectively. We
-can't do this with the buffer list.
-
-While the buffer list is and always will be useful, to solve these two
-problems, we have the Argument List.
-
-Argument List~
-
-Read |arglist| for details not covered here.
-
-Each window can have a separate argument list. You're free to set and reset the
-argument list as and when you see fit.
-
-Useful Arglist Commands~
-
-To set the current window's argument list to the .c files in the src/
-directory:
->
-  :args src/*.c
-<
-
-To do that recursively within all of the subdirectories:
->
-  :args src/**/*.c
-<
-
-To see your current argument list:
->
-  :args
-<
-
-To add the .h files to the argument list:
->
-  :argadd src/**/*.h
-<
-
-To jump to an argument by partial buffer (file) name match:
->
-  :argedit {partial name}
-<
-
-To jump to an argument by (1-based) index:
->
-  :argument {index}
-<
-
-To perform an operation on all of your arguments in a single command:
->
-  :argdo %s/Long live \zsthe buffer list\ze!/argument lists/ge | update
-<
-
-If you |:quit| before visiting all of the files in your argument list, Vim will
-ask you to confirm. To prevent that, use |:qa| instead.
-
-Local vs Global~
-
-If you open a new window, it will inherit the parent window's argument list.
-There are functions which will attach to the global argument list or create a
-new local argument list for the current window.
-See |:argglobal| and |:arglocal|
-
-Plugin Support via VFM~
-
-These commands are useful but a little frustrating to use in their native form.
-The VimFindsMe (|learnvim-vim-finds-me|) plugin has support for the argument
-list, removing these frustrations.
-
-Other Buffer Commands~
-
-The list of commands from |:badd| onwards in the |windows.txt| help file show
-the other buffer commands. Another excellent normal-mode command for navigating
-buffers is |ctrl-6| to switch between the |current-file| and the
-|alternate-file|.
-
-QUIZ~
-
-1. What is a buffer? What is the buffer list?
-
-2. What are the two big disadvantages of the buffer list?
-
-3. What is the argument list?
-
-4. How do you show the argument list?
-
-5. How do you set the argument list?
-
-6. How do you add a file to the argument list?
-
-7. How do you jump to a file in the argument list?
-    i. by name?
-   ii. by number?
-
-8. How does the VFM plugin make using the argument list easier?
+TODO
 
 
-==============================================================================
-
-[UNFINISHED: The following list of topics are planned for this section]
-
-windows (:only, c-w et al)
-:h ins-completion
-the gx commands
-registers
-  - accessing "+ / "* for clipboard cut&paste
-  - :g/xyz/y A   <-- appending to a register
-
-:set paste and :set pastetoggle
-or with :set mouse=a you can middle-click to paste without worrying about :set paste / nopaste / pastetoggle
-Note: You need a vim compiled with X11 for access to the clipboard (echo has('X11')) will show 1 if you do.
-
-
-Use |=| to reformat source code.
-
-Use |:retab| to change between tabs and spaces.
-
-Use abbreviations
-
-Show -where- a setting was set
-:verbose set sw?
-
-Quickfix window
   - make
     :cn / :cp
 
-[/UNFINISHED]
+==============================================================================
+FOLDING                                                 *learnvim-folding*
+
+TODO
+
+
+
+==============================================================================
+DIFFING                                                 *learnvim-diffing*
+
+TODO
+
+
+
+==============================================================================
+SPELL CHECK                                         *learnvim-spell-check*
+
+TODO
+
+==============================================================================
+MAPS AND ABBREVIATIONS                       *learnvim-maps-abbreviations*
+
+TODO
+
+	map \x :tabe <c-r>=expand('%:h')<CR>/
+
 
 ------------------------------------------------------------------------------
 
@@ -1362,30 +2071,19 @@ QUIZ~
 
 [UNFINISHED: The following list of topics are planned for this section]
 
-bufdo
-	:bufdo e    to re-read all open buffers from disk
-windo
-args and argdo
-	:h key-notation
+:h key-notation
 
-	paste into document with "ap to edit commands
-	re-read into register with 0"ay$ when cursor is on the line of commands
+paste into document with "ap to edit commands
+re-read into register with 0"ay$ when cursor is on the line of commands
 
 :h expand()
 :h filename-modifiers
-
-maps
-	map \x :tabe <c-r>=expand('%:h')<CR>/
 
 :w !sudo tee %
 :earlier + :later
 
 reopen the file with different encodoings (when working with legacy files)
 :e ++enc=cp1250
-
-Perldo and Rubydo (taken from http://stackoverflow.com/questions/726894/what-are-the-dark-corners-of-vim-your-mom-)
-:. perldo $_ = join ' ', reverse split
-:. rubydo $_ += ' ' + (1..8).collect{('A'..'Z').to_a[rand 26]}.join
 
 [/UNFINISHED]
 
@@ -1400,8 +2098,8 @@ ADVANCED TOPICS                                 *lv_A* *learnvim-Advanced*
 Becomming a VimL Master~
 
 Everybody wants to be a grey-beard master vimmer, mind-wielding Vim like a
-jedi, jumping around buffers like vimjas and scripting changes like bitchin
-vizzards. With this path to VimL mastery, you too can be master of your Vim,
+jedi, jumping around buffers like vimjas and scripting changes like wicked
+vizzards. Walk this path to VimL mastery and be the victor of your Vim,
 envy of your peers, idol to your fans.
 
 Skill Progression: Trainee -> Novice -> Worker -> Professional -> Expert
@@ -1416,13 +2114,13 @@ Trainee~
 * Read the following parts of |options.txt|
 ** |set-option|
 ** The following specific options:
-*** |'debug'|
-*** |'eventignore'|
-*** |'ignorecase'|
-*** |'magic'|
-*** |'maxfuncdepth'|
-*** |'runtimepath'|
-*** |'verbose'|
+*** 'debug'
+*** 'eventignore'
+*** 'ignorecase'
+*** 'magic'
+*** 'maxfuncdepth'
+*** 'runtimepath'
+*** 'verbose'
 
 * Read all of |pattern.txt|
 
@@ -1456,9 +2154,9 @@ Novice~
 
 * Read |map.txt|
 
-* Read |'timeout'| option
+* Read 'timeout' option
 
-* Read |'maxmapdepth'| option
+* Read 'maxmapdepth' option
 
 * Read |usr_40.txt|
 
@@ -1510,7 +2208,6 @@ Expert~
 [UNFINISHED: The following list of topics are planned for this section]
 
 custom commands
-customising the menu in gvim
 vim scripting
 variable scope (g: s: a:, etc)
 writing plugins
@@ -1605,7 +2302,7 @@ index by enabling the :setlocal number option. When you press <enter> in this
 scratch buffer, VFM will set your argument list to these files, in this order.
 
 The |:VFMEdit| command (mapped to <leader>ge by default.) lets you filter a
-find result on your |'path'| option. If you press |<enter>| on a file from this
+find result on your 'path' option. If you press |<enter>| on a file from this
 window, it will be opened as a new buffer (but not added to your argument
 list). If you'd like to set your argument list to the files in the VFM scratch
 window, type:
@@ -1633,15 +2330,13 @@ command supports argument list buffer name completion.
 
 
 3. Additional Plugins Worth Looking At       *learnvim-Additional-Plugins*
-
-* NERD Tree - File browser
-* NERD Commenter - Comment/uncomment code efficiently
-* TagBar - Tag manager
-* CSApprox - 88/256 colour terminal emulator for gui only colourschemes
-* Snipmate - Snippets and Templates
-* SearchParty - Extended Search, Replace, Highlight and Match commands
+                                                     *learnvim-commentary*
+* Commentary      - Comment/uncomment code efficiently
+                    https://github.com/tpope/vim-commentary
+* Ultisnips       - Code Snippets
+* SearchParty     - Extended Search, Replace, Highlight and Match commands
 * Fanf,ingTastic; - FftT;, across lines
-* vim-KWEasy - Jump to any character on the screen
+* vim-KWEasy      - Jump to any character on the screen
 
 
 ##############################################################################
@@ -1695,6 +2390,8 @@ Unsorted ~
 
 ##############################################################################
 CREDITS                                                 *learnvim-Credits*
+
+LearnVim is written and maintained by Barry Arthur (bairui).
 
 Thanks to the good people at FreeNode#vim for patiently answering my
 questions, and their many great suggestions.
