@@ -16,7 +16,7 @@ there is two method provided to install
 > to install this way just run the following command in your shell/putty
 > 
 > ~~~shell
-> curl https://github.com/juliosueiras/atlas-vim/blob/master/oneline_installer.sh | bash
+> curl https://raw.githubusercontent.com/juliosueiras/atlas-vim/master/oneline_installer.sh | bash
 > ~~~
 
 ### Method 2: Manual Install
