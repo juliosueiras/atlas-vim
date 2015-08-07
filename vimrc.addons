@@ -31,7 +31,7 @@ fun! SetupVAM()
 	\ 'Alignment@drchip', 'betterSearch', 'ctrlp', 'vim-help', 'yankstack',  'UltiSnips', 'vim-commentary',
 	\ 'lightline.vim', 'tlib', 'EasyMotion', 'vim-startify', 'vim-polyglot', 'Syntastic', 'grep', 'vim-misc',
 	\ 'snipmate', 'PaperColor', 'vital', 'svnj', 'molokai', 'vim-snippets', 'vim-signify',
-  \ 'vimshell', 'vim-shellutils', 'vim-plugin-viewdoc', 'QQ.vim', 'tmuxline.vim',
+  \ 'vimshell', 'vim-shellutils', 'vim-plugin-viewdoc', 'QQ.vim', 'tmuxline.vim', 'vim-qf',
 	\ 'surround', 'vim-pi', 'CSApprox', 'vim-dispatch', 'vim-plugins', 'OmniCppComplete', 'ide',
 	\ 'vim-addon-mw-utils', 'tagbar', 'supertab', 'vim-ctrlspace', 'numbers'], {})
 
